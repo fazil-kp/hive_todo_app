@@ -11,9 +11,9 @@ dependencies:
     sdk: flutter
   nb_utils: ^7.0.0
   flutter_riverpod: ^2.5.1
-  my_core:
+  core:
     git:
-      url: https://github.com/fazil-kp/my_core.git
+      url: https://github.com/fazil-kp/core.git
       ref: main
   go_router: ^13.2.4
   lottie: ^3.1.0

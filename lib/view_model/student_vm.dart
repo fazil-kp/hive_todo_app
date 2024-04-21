@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
-import 'package:my_core/api/api_helper.dart';
-import 'package:my_core/constants/enums/common_enums.dart';
-import 'package:my_core/helpers/core_helpers.dart';
-import 'package:my_core/helpers/core_hive_db.dart';
-import 'package:my_core/model/common_model.dart';
-import 'package:my_core/model/student_model.dart';
+import 'package:core/api/api_helper.dart';
+import 'package:core/constants/enums/common_enums.dart';
+import 'package:core/helpers/core_helpers.dart';
+import 'package:core/helpers/core_hive_db.dart';
+import 'package:core/model/common_model.dart';
+import 'package:core/model/student_model.dart';
 
 class StudentVM extends ChangeNotifier {
   StudentModel studentModel = const StudentModel();

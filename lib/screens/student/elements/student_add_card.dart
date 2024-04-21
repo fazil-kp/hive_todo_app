@@ -1,9 +1,9 @@
-import 'package:my_core/constants/enums/common_enums.dart';
-import 'package:my_core/core_widgets/core_date_picker.dart';
-import 'package:my_core/core_widgets/core_drop_down.dart';
-import 'package:my_core/core_widgets/core_text_field.dart';
-import 'package:my_core/core_widgets/core_validator_button.dart';
-import 'package:my_core/helpers/core_color_code.dart';
+import 'package:core/constants/enums/common_enums.dart';
+import 'package:core/core_widgets/core_date_picker.dart';
+import 'package:core/core_widgets/core_drop_down.dart';
+import 'package:core/core_widgets/core_text_field.dart';
+import 'package:core/core_widgets/core_validator_button.dart';
+import 'package:core/helpers/core_color_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
