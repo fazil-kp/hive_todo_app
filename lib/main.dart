@@ -12,11 +12,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter(Const.hiveBox);
   HttpOverrides.global = MyHttpOverrides();
-  runApp(const ProviderScope(child: FullStack()));
+  runApp(const ProviderScope(child: MainProject()));
 }
 
-class FullStack extends ConsumerWidget {
-  const FullStack({super.key});
+class MainProject extends ConsumerWidget {
+  const MainProject({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
