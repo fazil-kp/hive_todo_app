@@ -190,10 +190,10 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: beccbf41e2d36bc12de637d744ba51182dceea0c
+      resolved-ref: a45b14de84790e3275f9372d53850e80dc9f1484
       url: "https://github.com/fazil-kp/core.git"
     source: git
-    version: "1.0.0+1"
+    version: "0.0.0"
   cross_file:
     dependency: transitive
     description:
