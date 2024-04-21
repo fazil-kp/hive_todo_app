@@ -185,15 +185,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
-  core:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: main
-      resolved-ref: "4830b5ca8b834db0812004d99d74dccbc741abfd"
-      url: "https://github.com/fazil-kp/core.git"
-    source: git
-    version: "1.0.0+1"
   cross_file:
     dependency: transitive
     description:
@@ -641,6 +632,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  my_core:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: main
+      resolved-ref: "424a69d3b19236c7ffd45b592cb8487f44aab8f5"
+      url: "https://github.com/fazil-kp/my_core.git"
+    source: git
+    version: "1.0.0+1"
   nb_utils:
     dependency: "direct main"
     description:

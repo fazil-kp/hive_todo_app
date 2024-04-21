@@ -1,10 +1,11 @@
 import 'dart:io';
 import 'dart:ui';
-import 'package:core/constants/config/core_theme.dart';
-import 'package:core/helpers/core_helpers.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_core/constants/config/core_theme.dart';
+import 'package:my_core/helpers/core_helpers.dart';
 import 'routes/project_routes.dart';
 import 'view_model/riverpod.dart';
 

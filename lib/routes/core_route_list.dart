@@ -1,4 +1,4 @@
-import 'package:core/model/route_models.dart';
+import 'package:my_core/model/route_models.dart';
 import '../common_widgets/scaffold.dart';
 import '../login/login.dart';
 import '../screens/employee/employee_screen.dart';

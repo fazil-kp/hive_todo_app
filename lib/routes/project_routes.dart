@@ -1,6 +1,6 @@
-import 'package:core/constants/enums/route_enums.dart';
-import 'package:core/core_widgets/no_data_found.dart';
-import 'package:core/helpers/core_helpers.dart';
+import 'package:my_core/constants/enums/route_enums.dart';
+import 'package:my_core/core_widgets/no_data_found.dart';
+import 'package:my_core/helpers/core_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

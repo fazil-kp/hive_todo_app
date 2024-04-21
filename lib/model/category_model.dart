@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:core/api/api_helper.dart';
+import 'package:my_core/api/api_helper.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../api/apis.dart';
