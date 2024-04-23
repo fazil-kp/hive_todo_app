@@ -1,3 +1,4 @@
+import 'package:core/helpers/core_color_code.dart';
 import 'package:flutter/material.dart';
 import '../helpers/key_board_short_cuts.dart';
 import '../screens/student/student_screen.dart';
@@ -14,7 +15,7 @@ class CustomScaffold extends StatelessWidget {
     return hideScaffold == false
         ? KeyBoardShortCuts(
             child: Scaffold(
-              backgroundColor: Colors.white,
+              backgroundColor:ColorCode.colorList(context).whiteBlack,
               body: Column(
                 children: [
                   CustomAppBar(enums: enums, childWidget: childWidget),

@@ -21,6 +21,7 @@ class StudentVM extends ChangeNotifier {
     if (studentModel.name == null || studentModel.name?.isEmpty == true) {
       vmStateModel = vmStateModel.copyWith(state: VmState.error, message: "Please Fill Fields !");
     } else {
+      studentModel = studentModel.copyWith(dob: DateTime.now());
       studentModel = studentModel.copyWith(id: studentModelList.data.length + 1);
       studentModelList = studentModelList.copyWith(data: [...studentModelList.data, studentModel]);
       await MyDB.toDb(Const.hiveBox, "data", studentModelList.toJson());

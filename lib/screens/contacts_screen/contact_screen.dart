@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:project/screens/contacts_screen/contact_add.dart';
+import 'package:project/screens/contacts_screen/contacts_view.dart';
 
 import '../../view_model/riverpod.dart';
-import 'elements/employee_add_card.dart';
-import 'elements/employee_view_table.dart';
 
-class EmployeeScreen extends ConsumerWidget {
-  const EmployeeScreen({super.key});
+class ContactScreenScreen extends ConsumerWidget {
+  const ContactScreenScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,17 +20,17 @@ class EmployeeScreen extends ConsumerWidget {
         children: [
           Row(
             children: [
-              const EmployeeAddCard(),
+              const ContactAdd(),
               20.width,
-              const EmployeeViewTable(),
+              const ContactsViewTable(),
             ],
           ),
           20.height,
           ElevatedButton(
             onPressed: () {
-              context.goNamed("contact");
+              context.goNamed("employee");
             },
-            child: const Text("Contact"),
+            child: const Text("Go"),
           ).center(),
           20.height,
           ElevatedButton(

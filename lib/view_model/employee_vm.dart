@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:core/api/api_helper.dart';
+import 'package:flutter/material.dart';
 
 import '../model/category_model.dart';
 
