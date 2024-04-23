@@ -121,7 +121,7 @@ class ContactAdd extends ConsumerWidget {
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                     FilteringTextInputFormatter.digitsOnly,
                   ],
-                  value: ref.watch(contactVM).contactModel.phone.toString() == 'null' ? '' : ref.watch(contactVM).contactModel.phone.toString(),
+                  value: ref.watch(contactVM).contactModel.phone,
                   onChanged: (val) {
                     ref.watch(contactVM).contactModel = ref.watch(contactVM).contactModel.copyWith(phone: val);
                   },
