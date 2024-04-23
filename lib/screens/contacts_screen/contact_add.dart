@@ -145,7 +145,7 @@ class ContactAdd extends ConsumerWidget {
                 ref.watch(contactVM).save();
                 ref.watch(contactVM).refresh();
               },
-              child: Text('Add Contact')),
+              child: const Text('Add Contact')),
           // ValidatorButton(
           //   text: ref.watch(contactVM).contactModel.id == null ? "Add Student" : "Update Student",
           //   state: ref.watch(contactVM).vmStateModel.state ?? VmState.current,
