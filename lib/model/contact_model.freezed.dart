@@ -20,7 +20,7 @@ ContactModel _$ContactModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ContactModel {
-  String? get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $ContactModelCopyWith<$Res> {
           ContactModel value, $Res Function(ContactModel) then) =
       _$ContactModelCopyWithImpl<$Res, ContactModel>;
   @useResult
-  $Res call({String? id, String? name, String? email, String? phone});
+  $Res call({int? id, String? name, String? email, String? phone});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$ContactModelCopyWithImpl<$Res, $Val extends ContactModel>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$ContactModelImplCopyWith<$Res>
       __$$ContactModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? name, String? email, String? phone});
+  $Res call({int? id, String? name, String? email, String? phone});
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class __$$ContactModelImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ class _$ContactModelImpl implements _ContactModel {
       _$$ContactModelImplFromJson(json);
 
   @override
-  final String? id;
+  final int? id;
   @override
   final String? name;
   @override
@@ -180,7 +180,7 @@ class _$ContactModelImpl implements _ContactModel {
 
 abstract class _ContactModel implements ContactModel {
   const factory _ContactModel(
-      {final String? id,
+      {final int? id,
       final String? name,
       final String? email,
       final String? phone}) = _$ContactModelImpl;
@@ -189,7 +189,7 @@ abstract class _ContactModel implements ContactModel {
       _$ContactModelImpl.fromJson;
 
   @override
-  String? get id;
+  int? get id;
   @override
   String? get name;
   @override

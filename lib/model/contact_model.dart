@@ -11,7 +11,7 @@ part 'contact_model.g.dart';
 @freezed
 class ContactModel with _$ContactModel {
   const factory ContactModel({
-    String? id,
+    int? id,
     String? name,
     String? email,
     String? phone,
