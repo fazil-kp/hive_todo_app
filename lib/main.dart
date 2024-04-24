@@ -25,12 +25,7 @@ class MainProject extends ConsumerWidget {
       routerConfig: coreRoute,
       title: Const.appName,
       scrollBehavior: const MaterialScrollBehavior().copyWith(
-        dragDevices: {
-          PointerDeviceKind.mouse,
-          PointerDeviceKind.touch,
-          PointerDeviceKind.stylus,
-          PointerDeviceKind.unknown,
-        },
+        dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},
       ),
       themeMode: ref.watch(studentVM).isLightTheme ? ThemeMode.light : ThemeMode.dark,
       theme: AppTheme.getThemeData(ThemeMode.light),

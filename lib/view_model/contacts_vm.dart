@@ -31,7 +31,20 @@ class ContactsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> updateContact(int id) async {}
+  Future<void> deleteContact(int id) async {
+    contactModelList = contactModelList.copyWith(data: contactModelList.data.toList()..removeWhere((element) => element.id == id));
+    await ContactModel.toApi(contactModelList.toJson());
+    await getContact();
+    notifyListeners();
+  }
+
+  Future<void> updateContact(int id) async {
+    contactModelList = contactModelList.copyWith(data: contactModelList.data.map((e) => e.id == id ? contactModel : e).toList());
+    await ContactModel.toApi(contactModelList.toJson());
+    await getContact();
+    notifyListeners();
+  }
+
   void clear() {
     contactModel = const ContactModel();
     notifyListeners();
