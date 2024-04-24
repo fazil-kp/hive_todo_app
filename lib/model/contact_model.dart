@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:core/api/api_helper.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,7 +11,7 @@ part 'contact_model.g.dart';
 @freezed
 class ContactModel with _$ContactModel {
   const factory ContactModel({
-    int? id,
+    @JsonKey(name: "_id") int? id,
     String? name,
     String? email,
     String? phone,

@@ -11,6 +11,7 @@ class ContactsViewModel extends ChangeNotifier {
   ContactsViewModel() {
     getContact();
   }
+
   getContact() async {
     contactModelList = await ContactModelList.fromApi({});
     printx(contactModelList, 'contactsssssssssssssssssssssssssssss');
@@ -29,11 +30,7 @@ class ContactsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> updateContact(int id) async {
-    
-  
-
-  }
+  Future<void> updateContact(int id) async {}
   void clear() {
     contactModel = const ContactModel();
     notifyListeners();
