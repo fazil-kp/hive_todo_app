@@ -20,8 +20,7 @@ ContactModel _$ContactModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ContactModel {
-  @JsonKey(name: "_id")
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   String? get phone => throw _privateConstructorUsedError;
@@ -38,11 +37,7 @@ abstract class $ContactModelCopyWith<$Res> {
           ContactModel value, $Res Function(ContactModel) then) =
       _$ContactModelCopyWithImpl<$Res, ContactModel>;
   @useResult
-  $Res call(
-      {@JsonKey(name: "_id") int? id,
-      String? name,
-      String? email,
-      String? phone});
+  $Res call({String? id, String? name, String? email, String? phone});
 }
 
 /// @nodoc
@@ -67,7 +62,7 @@ class _$ContactModelCopyWithImpl<$Res, $Val extends ContactModel>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -92,11 +87,7 @@ abstract class _$$ContactModelImplCopyWith<$Res>
       __$$ContactModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: "_id") int? id,
-      String? name,
-      String? email,
-      String? phone});
+  $Res call({String? id, String? name, String? email, String? phone});
 }
 
 /// @nodoc
@@ -119,7 +110,7 @@ class __$$ContactModelImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -139,15 +130,13 @@ class __$$ContactModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ContactModelImpl implements _ContactModel {
-  const _$ContactModelImpl(
-      {@JsonKey(name: "_id") this.id, this.name, this.email, this.phone});
+  const _$ContactModelImpl({this.id, this.name, this.email, this.phone});
 
   factory _$ContactModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ContactModelImplFromJson(json);
 
   @override
-  @JsonKey(name: "_id")
-  final int? id;
+  final String? id;
   @override
   final String? name;
   @override
@@ -191,7 +180,7 @@ class _$ContactModelImpl implements _ContactModel {
 
 abstract class _ContactModel implements ContactModel {
   const factory _ContactModel(
-      {@JsonKey(name: "_id") final int? id,
+      {final String? id,
       final String? name,
       final String? email,
       final String? phone}) = _$ContactModelImpl;
@@ -200,8 +189,7 @@ abstract class _ContactModel implements ContactModel {
       _$ContactModelImpl.fromJson;
 
   @override
-  @JsonKey(name: "_id")
-  int? get id;
+  String? get id;
   @override
   String? get name;
   @override

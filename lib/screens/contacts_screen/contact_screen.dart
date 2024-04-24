@@ -35,8 +35,8 @@ class ContactScreenScreen extends ConsumerWidget {
           20.height,
           ElevatedButton(
             onPressed: () {
-              ref.watch(employeeVM).getCategories();
-              ref.watch(employeeVM).refresh();
+              ref.watch(contactVM).getContact();
+              ref.watch(contactVM).refresh();
             },
             child: const Text("Api get check"),
           ).center()

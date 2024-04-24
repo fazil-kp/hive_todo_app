@@ -11,7 +11,7 @@ part 'contact_model.g.dart';
 @freezed
 class ContactModel with _$ContactModel {
   const factory ContactModel({
-    @JsonKey(name: "_id") int? id,
+    String? id,
     String? name,
     String? email,
     String? phone,
