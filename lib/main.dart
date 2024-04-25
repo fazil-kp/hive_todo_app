@@ -24,9 +24,7 @@ class MainProject extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routerConfig: coreRoute,
       title: Const.appName,
-      scrollBehavior: const MaterialScrollBehavior().copyWith(
-        dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},
-      ),
+      scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown}),
       themeMode: ref.watch(studentVM).isLightTheme ? ThemeMode.light : ThemeMode.dark,
       theme: AppTheme.getThemeData(ThemeMode.light),
       darkTheme: AppTheme.getThemeData(ThemeMode.dark),

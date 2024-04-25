@@ -140,7 +140,12 @@ class ContactAdd extends ConsumerWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                ref.watch(contactVM).save();
+                if (ref.watch(contactVM).contactModel.id == null) {
+                  ref.watch(contactVM).save();
+                } else {
+                  ref.watch(contactVM).updateContact(ref.watch(contactVM).contactModel.id ?? 0);
+                }
+                ref.watch(contactVM).clear();
                 ref.watch(contactVM).refresh();
               },
               child: const Text('Add Contact')),
