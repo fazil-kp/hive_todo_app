@@ -62,11 +62,9 @@ class ContactAdd extends ConsumerWidget {
                     if (ref.watch(contactVM).contactModel.id != null) ...[
                       InkWell(
                         onTap: () async {
-                          // ref.watch(contactVM).delete(ref.watch(contactVM).contactModel.id ?? 0);
-                          // await Future.delayed(const Duration(seconds: 1));
-                          // ref.watch(contactVM).vmStateModel = ref.watch(contactVM).vmStateModel.copyWith(state: VmState.current);
-                          // ref.watch(contactVM).clear();
-                          // ref.watch(contactVM).refresh();
+                          ref.watch(contactVM).deleteContact(ref.watch(contactVM).contactModel.id ?? 0);
+                          ref.watch(contactVM).clear();
+                          ref.watch(contactVM).refresh();
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 10),
