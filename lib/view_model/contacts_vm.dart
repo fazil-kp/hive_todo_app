@@ -25,8 +25,6 @@ class ContactsViewModel extends ChangeNotifier {
   Future<void> save() async {
     contactModel = contactModel.copyWith(id: contactModelList.data.length + 1);
     contactModel = await ContactModel.toApi(contactModel.toJson());
-    printx("save here");
-    printx(contactModel.toJson(), 'contactAddddddddddddddddddddddddddddddddddddddd');
     await getContact();
     notifyListeners();
   }
