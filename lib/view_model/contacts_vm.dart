@@ -34,6 +34,7 @@ class ContactsViewModel extends ChangeNotifier {
   Future<void> deleteContact(int id) async {
     contactModelList = contactModelList.copyWith(data: contactModelList.data.toList()..removeWhere((element) => element.id == id));
     await ContactModel.toApi(contactModelList.toJson());
+    printx(contactModelList.toJson(), "deleteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
     await getContact();
     notifyListeners();
   }

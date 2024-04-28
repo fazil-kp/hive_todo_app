@@ -21,7 +21,6 @@ class ContactModel with _$ContactModel {
 
   static Future<ContactModel> toApi(Map<String, dynamic> data) async {
     return await Helper.postRest(Api.contact, data).then((value) {
-      // printx(value, 'ordereeeeeeeeeeeeeeeeeeeeee');
       return ContactModel.fromJson(value);
     });
   }
@@ -37,8 +36,6 @@ class ContactModelList with _$ContactModelList {
 
   static Future<ContactModelList> fromApi(Map<String, dynamic> data) async {
     return await Helper.getRest(Api.contact, {}).then((value) {
-      printx(value, 'valueeeeeeeeeeeeeee');
-      printx(data, 'dataaaaaaaaaaaaaaaaaaaaaaaaaaaa');
       return ContactModelList.fromJson(value);
     });
   }
