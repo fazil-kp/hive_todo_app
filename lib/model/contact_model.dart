@@ -35,7 +35,7 @@ class ContactModelList with _$ContactModelList {
   factory ContactModelList.fromJson(Map<String, dynamic> json) => _$ContactModelListFromJson(json);
 
   static Future<ContactModelList> fromApi(Map<String, dynamic> data) async {
-    return await Helper.getRest(Api.contact, {}).then((value) {
+    return await Helper.getRest(Api.contact, data).then((value) {
       return ContactModelList.fromJson(value);
     });
   }
