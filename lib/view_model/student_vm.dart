@@ -24,7 +24,7 @@ class StudentVM extends ChangeNotifier {
       studentModel = studentModel.copyWith(dob: DateTime.now());
       studentModel = studentModel.copyWith(id: studentModelList.data.length + 1);
       studentModelList = studentModelList.copyWith(data: [...studentModelList.data, studentModel]);
-      await MyDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+      await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
       vmStateModel = vmStateModel.copyWith(state: VmState.success, message: "Added Successfully");
       await getStudent();
       printx(studentModelList.toJson());
@@ -46,13 +46,13 @@ class StudentVM extends ChangeNotifier {
         return e;
       }
     }).toList());
-    await MyDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+    await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
     vmStateModel = vmStateModel.copyWith(state: VmState.success, message: "Updated Successfully");
     notifyListeners();
   }
 
   Future<void> getStudent() async {
-    var data = await MyDB.fromDb(Const.hiveBox, "data");
+    var data = await CoreDB.fromDb(Const.hiveBox, "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
     }
@@ -61,13 +61,13 @@ class StudentVM extends ChangeNotifier {
 
   delete(int id) async {
     studentModelList = studentModelList.copyWith(data: studentModelList.data.where((element) => element.id != id).toList());
-    await MyDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+    await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
     vmStateModel = vmStateModel.copyWith(state: VmState.delete, message: "🗑️ Deleted Successfully");
     notifyListeners();
   }
 
   void search() async {
-    var data = await MyDB.fromDb(Const.hiveBox, "data");
+    var data = await CoreDB.fromDb(Const.hiveBox, "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
       studentModelList = studentModelList.copyWith(
