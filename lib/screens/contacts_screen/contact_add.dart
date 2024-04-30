@@ -14,7 +14,7 @@ class ContactAdd extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: ColorCode.colorList(context).borderColor!), color: ColorCode.colorList(context).whiteBlack, boxShadow: defaultBoxShadow()),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: ColorCode.colorList(context).borderAshColor!), color: ColorCode.colorList(context).whiteBlack, boxShadow: defaultBoxShadow()),
       width: 400,
       height: MediaQuery.of(context).size.height - 200,
       child: Column(
@@ -24,7 +24,7 @@ class ContactAdd extends ConsumerWidget {
           Container(
             height: context.height() - 265,
             decoration: BoxDecoration(
-              border: Border.all(color: ColorCode.colorList(context).borderColor!),
+              border: Border.all(color: ColorCode.colorList(context).borderAshColor!),
               borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             ),
             padding: const EdgeInsets.only(left: 16, right: 16),

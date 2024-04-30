@@ -190,7 +190,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "458811db612f733e0f1f44881c4535c64a455114"
+      resolved-ref: "6f17cc6cd0b2c09c0bbffc77da596d752c5540c0"
       url: "https://github.com/fazil-kp/core.git"
     source: git
     version: "0.0.0"

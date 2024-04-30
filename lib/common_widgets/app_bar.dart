@@ -13,9 +13,8 @@ class CustomAppBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
-      child: Container(
+      child: SizedBox(
         height: 60.0,
-        color: ColorCode.colorList(context).whiteBlack,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
@@ -25,7 +24,7 @@ class CustomAppBar extends ConsumerWidget {
               const Spacer(),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorCode.colorList(context).borderColor!),
+                  border: Border.all(color: ColorCode.colorList(context).borderAshColor!),
                   borderRadius: BorderRadius.circular(50),
                   color: ColorCode.colorList(context).cardColor!,
                 ),

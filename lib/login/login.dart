@@ -69,8 +69,8 @@ class LoginScreen extends StatelessWidget {
                                   width: respo ? 370 : double.infinity,
                                   height: respo ? 50 : 65,
                                   child: CustomButton(
-                                    onPressed: () async {},
-                                    child: Text('Login', style: Theme.of(context).textTheme.labelLarge?.copyWith(color: respo ? whiteColor : whiteColor.withOpacity(.7).withOpacity(.7), fontWeight: FontWeight.bold)),
+                                    onTap: () {},
+                                    text: 'Login',
                                   ),
                                 ),
                                 15.height,
