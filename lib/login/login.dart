@@ -1,7 +1,8 @@
 import 'package:core/constants/config/core_colors.dart';
 import 'package:core/constants/enums/route_enums.dart';
-import 'package:core/core_widgets/core_button.dart';
-import 'package:core/core_widgets/core_text_field.dart';
+import 'package:core/widgets/core_button.dart';
+import 'package:core/widgets/core_text_field.dart';
+import 'package:core/helpers/core_helpers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,7 +13,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final respo = ResponsiveHelper.isDesktop(context);
+    final respo = RespoHelper.isDesktop(context);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -111,7 +112,7 @@ class SideBarImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final respo = ResponsiveHelper.isDesktop(context);
+    final respo = RespoHelper.isDesktop(context);
     return Expanded(
       flex: 2,
       child: Stack(
