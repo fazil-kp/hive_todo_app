@@ -38,7 +38,11 @@ class ContactsViewModel extends ChangeNotifier {
   // }
 
   deleteContact(int id) async {
-    contactModel = contactModelList.data.firstWhere((element) => element.id == id);
+    contactModelList = await ContactModelList.fromApi({});
+
+    contactModelList = contactModelList.copyWith(
+      data: contactModelList.data.where((element) => element.id != id).toList(growable: false),
+    );
     await ContactModel.delete({"id": id});
     contactModel = await ContactModel.toApi(contactModel.toJson());
     refresh();
