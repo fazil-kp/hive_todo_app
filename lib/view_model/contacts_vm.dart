@@ -29,12 +29,19 @@ class ContactsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> deleteContact(int id) async {
-    contactModelList = contactModelList.copyWith(data: contactModelList.data.toList()..removeWhere((element) => element.id == id));
-    await ContactModel.toApi(contactModelList.toJson());
-    printx(contactModelList.toJson(), "deleteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-    await getContact();
-    notifyListeners();
+  // Future<void> deleteContact(int id) async {
+  //   await ContactModel.delete({"id": id}).then((value) {
+  //     printx(contactModelList.toJson(), "deleteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+  //     getContact();
+  //     notifyListeners();
+  //   });
+  // }
+
+  deleteContact(int id) async {
+    contactModel = contactModelList.data.firstWhere((element) => element.id == id);
+    await ContactModel.delete({"id": id});
+    contactModel = await ContactModel.toApi(contactModel.toJson());
+    refresh();
   }
 
   Future<void> updateContact(int id) async {

@@ -27,7 +27,6 @@ class ContactModel with _$ContactModel {
 
    static Future<Map<String, dynamic>> delete(Map<String, dynamic> data) async {
     return await Helper.postRest(Api.contactModify, data).then((value) {
-      print("sssssssssssssssssssssssssssssssss ${value}");
       return value;
     });
   }
