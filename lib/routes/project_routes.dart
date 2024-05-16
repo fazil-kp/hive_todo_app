@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../common_widgets/scaffold.dart';
-import '../login/login.dart';
-import '../splash.dart';
 import 'core_route_list.dart';
 
 final GoRouter coreRoute = GoRouter(
@@ -41,24 +39,26 @@ List<RouteBase> _buildRoutes() {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
         },
-        child: FutureBuilder(
-          future: login(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState != ConnectionState.done) {
-              return const Splash();
-            } else if (snapshot.hasError) {
-              return const SizedBox(
-                child: Text("Error"),
-              );
-            } else {
-              if (snapshot.data == true) {
-                return const CustomScaffold();
-              } else {
-                return const LoginScreen();
-              }
-            }
-          },
-        ),
+        child: CustomScaffold(),
+
+        // FutureBuilder(
+        //   future: login(),
+        //   builder: (context, snapshot) {
+        //     if (snapshot.connectionState != ConnectionState.done) {
+        //       return const Splash();
+        //     } else if (snapshot.hasError) {
+        //       return const SizedBox(
+        //         child: Text("Error"),
+        //       );
+        //     } else {
+        //       if (snapshot.data == true) {
+        //         return const CustomScaffold();
+        //       } else {
+        //         return const LoginScreen();
+        //       }
+        //     }
+        //   },
+        // ),
       ),
       routes: [
         ..._staticRoutes(),
