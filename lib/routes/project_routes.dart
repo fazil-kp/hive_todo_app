@@ -1,6 +1,4 @@
-import 'package:core/constants/enums/route_enums.dart';
 import 'package:core/helpers/core_helpers.dart';
-import 'package:core/widgets/no_data_found.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,7 +17,7 @@ final GoRouter coreRoute = GoRouter(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const NoDataFound(message: "Page Not Found"),
+            // const NoDataFound(message: "Page Not Found"),
             ElevatedButton(
               onPressed: () => context.go("/"),
               child: const Text("Back"),
@@ -76,19 +74,19 @@ Future<bool> login() async {
 
 List<GoRoute> _staticRoutes() {
   return [
-    GoRoute(path: RoutePathCore.splash.name, name: RoutePathCore.splash.name, builder: (BuildContext context, GoRouterState state) => const Splash()),
-    GoRoute(path: RoutePathCore.login.name, name: RoutePathCore.login.name, builder: (BuildContext context, GoRouterState state) => const LoginScreen()),
-    GoRoute(
-      path: RoutePathCore.todo.name,
-      name: RoutePathCore.todo.name,
-      pageBuilder: (BuildContext context, GoRouterState state) => CustomTransitionPage(
-        key: state.pageKey,
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
-        },
-        child: const CustomScaffold(),
-      ),
-    ),
+    // GoRoute(path: RoutePathCore.splash.name, name: RoutePathCore.splash.name, builder: (BuildContext context, GoRouterState state) => const Splash()),
+    // GoRoute(path: RoutePathCore.login.name, name: RoutePathCore.login.name, builder: (BuildContext context, GoRouterState state) => const LoginScreen()),
+    // GoRoute(
+    //   path: RoutePathCore.todo.name,
+    //   name: RoutePathCore.todo.name,
+    //   pageBuilder: (BuildContext context, GoRouterState state) => CustomTransitionPage(
+    //     key: state.pageKey,
+    //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
+    //       return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
+    //     },
+    //     child: const CustomScaffold(),
+    //   ),
+    // ),
   ];
 }
 

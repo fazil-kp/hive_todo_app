@@ -1,9 +1,7 @@
-import 'package:core/constants/enums/common_enums.dart';
 import 'package:core/helpers/core_color_code.dart';
 import 'package:core/widgets/core_date_picker.dart';
 import 'package:core/widgets/core_drop_down.dart';
 import 'package:core/widgets/core_text_field.dart';
-import 'package:core/widgets/core_validator_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -68,8 +66,6 @@ class StudentAddCard extends ConsumerWidget {
                       InkWell(
                         onTap: () async {
                           ref.read(studentVM).delete(ref.watch(studentVM).studentModel.id ?? 0);
-                          await Future.delayed(const Duration(seconds: 1));
-                          ref.read(studentVM).vmStateModel = ref.read(studentVM).vmStateModel.copyWith(state: VmState.current);
                           ref.read(studentVM).clear();
                           ref.read(studentVM).refresh();
                         },
@@ -180,24 +176,20 @@ class StudentAddCard extends ConsumerWidget {
               ],
             ),
           ),
-          ValidatorButton(
-            text: ref.watch(studentVM).studentModel.id == null ? "Add Student" : "Update Student",
-            state: ref.watch(studentVM).vmStateModel.state ?? VmState.current,
-            onTap: () async {
-              if (ref.watch(studentVM).studentModel.id == null) {
-                ref.read(studentVM).save();
-              } else {
-                ref.read(studentVM).update(ref.watch(studentVM).studentModel.id ?? 0);
-              }
-              ref.read(studentVM).clear();
-              await Future.delayed(const Duration(seconds: 1));
-              ref.read(studentVM).vmStateModel = ref.read(studentVM).vmStateModel.copyWith(state: VmState.current);
-              ref.read(studentVM).refresh();
-            },
-            successMessage: ref.watch(studentVM).vmStateModel.message ?? '',
-            warningMessage: ref.watch(studentVM).vmStateModel.message ?? '',
-            deleteMessage: ref.watch(studentVM).vmStateModel.message ?? '',
-          ),
+          ElevatedButton(
+              onPressed: () async {
+                if (ref.watch(studentVM).studentModel.id == null) {
+                  ref.read(studentVM).save();
+                } else {
+                  ref.read(studentVM).update(ref.watch(studentVM).studentModel.id ?? 0);
+                }
+                ref.read(studentVM).clear();
+                await Future.delayed(const Duration(seconds: 1));
+                ref.read(studentVM).refresh();
+              },
+              child: Text(
+                ref.watch(studentVM).studentModel.id == null ? "Add Student" : "Update Student",
+              )),
         ],
       ),
     );
