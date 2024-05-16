@@ -1,11 +1,8 @@
-import 'package:core/constants/config/core_colors.dart';
-import 'package:core/constants/enums/route_enums.dart';
+import 'package:core/helpers/core_helpers.dart';
 import 'package:core/widgets/core_button.dart';
 import 'package:core/widgets/core_text_field.dart';
-import 'package:core/helpers/core_helpers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -56,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                                   hintText: "Password",
                                   height: respo ? 50 : 65,
                                   onEditingComplete: () async {
-                                    context.goNamed(RoutePathCore.todo.name);
+                                    // context.goNamed(RoutePathCore.todo.name);
                                   },
                                   suffix: IconButton(
                                     onPressed: () {},
@@ -131,7 +128,7 @@ class SideBarImage extends StatelessWidget {
           Positioned(
             bottom: 10,
             left: 10,
-            child: Text("", style: Theme.of(context).textTheme.labelMedium!.copyWith(color: respo ? UiColor.extraDarkGreyColor : whiteColor.withOpacity(.7).withOpacity(.7), fontSize: 12, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+            child: Text("", style: Theme.of(context).textTheme.labelMedium!.copyWith(color: respo ? darkGrey : whiteColor.withOpacity(.7).withOpacity(.7), fontSize: 12, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
           ),
         ],
       ),

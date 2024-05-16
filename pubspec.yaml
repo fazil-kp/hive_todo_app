@@ -13,7 +13,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   core:
     git:
-      url: https://github.com/fazil-kp/core.git
+      url: https://github.com/dev-liber/core.git
       ref: main
   go_router: ^13.2.4
   lottie: ^3.1.0
