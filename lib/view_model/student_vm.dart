@@ -1,17 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:core/api/api_helper.dart';
-import 'package:core/constants/enums/common_enums.dart';
 import 'package:core/helpers/core_helpers.dart';
 import 'package:core/helpers/core_hive_db.dart';
-import 'package:core/model/common_model.dart';
-import 'package:core/model/student_model.dart';
+import 'package:flutter/material.dart';
+
+import '../model/student_model.dart';
 
 class StudentVM extends ChangeNotifier {
   StudentModel studentModel = const StudentModel();
   StudentModelList studentModelList = const StudentModelList();
   bool isLightTheme = true;
   String? searchFilter;
-  VmStateModel vmStateModel = const VmStateModel();
 
   StudentVM() {
     getStudent();
@@ -19,13 +16,11 @@ class StudentVM extends ChangeNotifier {
 
   Future<void> save() async {
     if (studentModel.name == null || studentModel.name?.isEmpty == true) {
-      vmStateModel = vmStateModel.copyWith(state: VmState.error, message: "Please Fill Fields !");
     } else {
       studentModel = studentModel.copyWith(dob: DateTime.now());
       studentModel = studentModel.copyWith(id: studentModelList.data.length + 1);
       studentModelList = studentModelList.copyWith(data: [...studentModelList.data, studentModel]);
       await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
-      vmStateModel = vmStateModel.copyWith(state: VmState.success, message: "Added Successfully");
       await getStudent();
       printx(studentModelList.toJson());
     }
@@ -34,7 +29,6 @@ class StudentVM extends ChangeNotifier {
 
   Future<void> update(int id) async {
     if (studentModel.name == null || studentModel.name!.isEmpty) {
-      vmStateModel = vmStateModel.copyWith(state: VmState.error, message: "Please Fill Fields !");
       notifyListeners();
       return;
     }
@@ -47,7 +41,6 @@ class StudentVM extends ChangeNotifier {
       }
     }).toList());
     await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
-    vmStateModel = vmStateModel.copyWith(state: VmState.success, message: "Updated Successfully");
     notifyListeners();
   }
 
@@ -62,7 +55,6 @@ class StudentVM extends ChangeNotifier {
   delete(int id) async {
     studentModelList = studentModelList.copyWith(data: studentModelList.data.where((element) => element.id != id).toList());
     await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
-    vmStateModel = vmStateModel.copyWith(state: VmState.delete, message: "🗑️ Deleted Successfully");
     notifyListeners();
   }
 
