@@ -39,7 +39,7 @@ List<RouteBase> _buildRoutes() {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
         },
-        child: CustomScaffold(),
+        child: const CustomScaffold(),
 
         // FutureBuilder(
         //   future: login(),
