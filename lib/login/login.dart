@@ -1,9 +1,12 @@
+import 'package:chewie/chewie.dart';
 import 'package:core/helpers/core_helpers.dart';
 import 'package:core/widgets/core_button.dart';
 import 'package:core/widgets/core_text_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:video_player/video_player.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -16,7 +19,10 @@ class LoginScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Row(
         children: [
-          if (respo) const SideBarImage(),
+          if (respo)
+            const SideBarVideo(
+              videoUrl: "https://youtu.be/QC8iQqtG0hg?si=RBFCOXMks90chbyO",
+            ),
           Expanded(
             flex: 2,
             child: Container(
@@ -104,33 +110,50 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class SideBarImage extends StatelessWidget {
-  const SideBarImage({super.key});
+class SideBarVideo extends StatefulWidget {
+  final String videoUrl;
+  const SideBarVideo({Key? key, required this.videoUrl}) : super(key: key);
+
+  @override
+  _SideBarVideoState createState() => _SideBarVideoState();
+}
+
+class _SideBarVideoState extends State<SideBarVideo> {
+  late YoutubePlayerController _youtubePlayerController;
+  @override
+  void initState() {
+    super.initState();
+    _youtubePlayerController = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(widget.videoUrl) ?? '',
+      flags: const YoutubePlayerFlags(
+        autoPlay: true,
+        mute: true,
+        disableDragSeek: true,
+        loop: true,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _youtubePlayerController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final respo = RespoHelper.isDesktop(context);
     return Expanded(
       flex: 2,
-      child: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: blackColor.withOpacity(.1),
-                image: const DecorationImage(
-                  image: AssetImage('assets/images/testimg2.jpg'),
-                  fit: BoxFit.cover,
-                  opacity: .4,
-                )),
-          ),
-
-          // Terms and conditions
-          Positioned(
-            bottom: 10,
-            left: 10,
-            child: Text("", style: Theme.of(context).textTheme.labelMedium!.copyWith(color: respo ? darkGrey : whiteColor.withOpacity(.7).withOpacity(.7), fontSize: 12, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
-          ),
-        ],
+      child: AspectRatio(
+        aspectRatio: 16 / 9, // Set aspect ratio according to your video's aspect ratio
+        child: YoutubePlayer(
+          controller: _youtubePlayerController,
+          showVideoProgressIndicator: false,
+          progressIndicatorColor: Colors.red,
+          onReady: () {
+            _youtubePlayerController.play();
+          },
+        ),
       ),
     );
   }

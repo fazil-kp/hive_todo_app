@@ -26,6 +26,9 @@ dependencies:
   build_runner: ^2.4.9
   new_keyboard_shortcuts: ^0.1.4
   hive_flutter: ^1.1.0
+  video_player: ^2.8.6
+  youtube_player_flutter: ^8.1.2
+  chewie: ^1.8.1
 
 dev_dependencies:
   flutter_test:
@@ -34,4 +37,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/videos/
+    - assets/videos/loginvideo.mp4
+    
 
