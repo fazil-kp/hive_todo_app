@@ -18,6 +18,7 @@ class LoginScreen extends StatelessWidget {
               AssetPlayerWidget(),
             ],
           ),
+          30.width,
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
