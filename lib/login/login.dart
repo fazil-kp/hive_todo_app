@@ -1,11 +1,9 @@
-import 'package:chewie/chewie.dart';
 import 'package:core/helpers/core_helpers.dart';
 import 'package:core/widgets/core_button.dart';
 import 'package:core/widgets/core_text_field.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -19,10 +17,7 @@ class LoginScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Row(
         children: [
-          if (respo)
-            const SideBarVideo(
-              videoUrl: "https://youtu.be/QC8iQqtG0hg?si=RBFCOXMks90chbyO",
-            ),
+          if (respo) const SideBarVideo(),
           Expanded(
             flex: 2,
             child: Container(
@@ -111,33 +106,24 @@ class LoginScreen extends StatelessWidget {
 }
 
 class SideBarVideo extends StatefulWidget {
-  final String videoUrl;
-  const SideBarVideo({Key? key, required this.videoUrl}) : super(key: key);
+  const SideBarVideo({Key? key}) : super(key: key);
 
   @override
   _SideBarVideoState createState() => _SideBarVideoState();
 }
 
 class _SideBarVideoState extends State<SideBarVideo> {
+  final videoUrl = "https://youtu.be/m9coOXt5nuw?si=1TNnLqng0q6_t9o1";
   late YoutubePlayerController _youtubePlayerController;
-  @override
-  void initState() {
-    super.initState();
-    _youtubePlayerController = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId(widget.videoUrl) ?? '',
-      flags: const YoutubePlayerFlags(
-        autoPlay: true,
-        mute: true,
-        disableDragSeek: true,
-        loop: true,
-      ),
-    );
-  }
 
   @override
-  void dispose() {
-    _youtubePlayerController.dispose();
-    super.dispose();
+  void initState() {
+    final videoId = YoutubePlayer.convertUrlToId(videoUrl);
+    _youtubePlayerController = YoutubePlayerController(
+      initialVideoId: videoId!,
+      flags: const YoutubePlayerFlags(autoPlay: false),
+    );
+    super.initState();
   }
 
   @override
@@ -145,14 +131,27 @@ class _SideBarVideoState extends State<SideBarVideo> {
     return Expanded(
       flex: 2,
       child: AspectRatio(
-        aspectRatio: 16 / 9, // Set aspect ratio according to your video's aspect ratio
+        aspectRatio: 18 / 9,
         child: YoutubePlayer(
           controller: _youtubePlayerController,
-          showVideoProgressIndicator: false,
+          showVideoProgressIndicator: true,
           progressIndicatorColor: Colors.red,
           onReady: () {
             _youtubePlayerController.play();
           },
+          bottomActions: [
+            CurrentPosition(),
+            ProgressBar(
+              isExpanded: true,
+              colors: ProgressBarColors(
+                playedColor: Colors.red,
+                handleColor: Colors.red,
+              ),
+            ),
+            PlaybackSpeedButton(),
+            RemainingDuration(),
+            FullScreenButton(),
+          ],
         ),
       ),
     );
