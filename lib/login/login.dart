@@ -118,12 +118,22 @@ class _SideBarVideoState extends State<SideBarVideo> {
 
   @override
   void initState() {
-    final videoId = YoutubePlayer.convertUrlToId(videoUrl);
-    _youtubePlayerController = YoutubePlayerController(
-      initialVideoId: videoId!,
-      flags: const YoutubePlayerFlags(autoPlay: false),
-    );
     super.initState();
+    _youtubePlayerController = YoutubePlayerController(
+      initialVideoId: YoutubePlayer.convertUrlToId(videoUrl)!,
+      flags: const YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      ),
+    )..addListener(() {
+        setState(() {});
+      });
+  }
+
+  @override
+  void dispose() {
+    _youtubePlayerController.dispose();
+    super.dispose();
   }
 
   @override
@@ -131,7 +141,7 @@ class _SideBarVideoState extends State<SideBarVideo> {
     return Expanded(
       flex: 2,
       child: AspectRatio(
-        aspectRatio: 18 / 9,
+        aspectRatio: 16 / 9,
         child: YoutubePlayer(
           controller: _youtubePlayerController,
           showVideoProgressIndicator: true,
