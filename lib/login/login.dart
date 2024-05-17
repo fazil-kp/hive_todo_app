@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:video_player/video_player.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +11,7 @@ class LoginScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: Row(
         children: [
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,7 +36,7 @@ class LoginScreen extends StatelessWidget {
 }
 
 class AssetPlayerWidget extends StatefulWidget {
-  const AssetPlayerWidget({Key? key}) : super(key: key);
+  const AssetPlayerWidget({super.key});
 
   @override
   _AssetPlayerWidgetState createState() => _AssetPlayerWidgetState();
@@ -66,10 +64,10 @@ class _AssetPlayerWidgetState extends State<AssetPlayerWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
+      padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: context.height() * 0.65,
-        width: context.width() * 0.65,
+        height: context.height() * 0.9,
+        width: (context.width() * 0.7) - 100,
         child: VideoPlayerWidget(controller: controller),
       ),
     );
@@ -79,12 +77,12 @@ class _AssetPlayerWidgetState extends State<AssetPlayerWidget> {
 class VideoPlayerWidget extends StatelessWidget {
   final VideoPlayerController controller;
 
-  const VideoPlayerWidget({Key? key, required this.controller}) : super(key: key);
+  const VideoPlayerWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) => controller.value.isInitialized
       ? buildVideo()
-      : SizedBox(
+      : const SizedBox(
           height: 200,
           child: Center(child: CircularProgressIndicator()),
         );
