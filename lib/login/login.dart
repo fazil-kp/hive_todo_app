@@ -14,7 +14,6 @@ class LoginScreen extends StatelessWidget {
     final respo = RespoHelper.isDesktop(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      
       body: Row(
         children: [
           const AssetPlayerWidget(),
