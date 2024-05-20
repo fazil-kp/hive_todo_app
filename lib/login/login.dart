@@ -16,7 +16,6 @@ class LoginScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
 
 
-
       
       body: Row(
         children: [
