@@ -15,7 +15,6 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
 
-
       
       body: Row(
         children: [
