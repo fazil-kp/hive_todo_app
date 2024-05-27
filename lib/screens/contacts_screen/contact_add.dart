@@ -1,5 +1,5 @@
+import 'package:core/constants/config/core_color_code.dart';
 import 'package:core/widgets/core_text_field.dart';
-import 'package:core/helpers/core_color_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

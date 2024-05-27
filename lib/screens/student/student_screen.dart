@@ -38,12 +38,10 @@ class StudentScreen extends ConsumerWidget {
               showDialog(
                   context: context,
                   builder: (context) => const CustomAlertDialog(
-                        height: 370,
                         title: "Hello",
                         description: "This is a custom alert dialog box",
                         firstButtonText: "Ok",
                         secondButtonText: "Cancel",
-                        customWidget: Text("dmjndjnjn"),
                         timerDelay: 10,
                         image: "assets/images/logo.png",
                       ));

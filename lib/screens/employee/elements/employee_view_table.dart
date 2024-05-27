@@ -1,7 +1,7 @@
 import 'package:core/widgets/core_custom_table.dart';
 import 'package:core/widgets/core_main_widget.dart';
 import 'package:core/widgets/core_text_field.dart';
-import 'package:core/helpers/core_color_code.dart';
+import 'package:core/constants/config/core_color_code.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
