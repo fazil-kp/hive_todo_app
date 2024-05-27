@@ -11,7 +11,6 @@ class StudentScreen extends ConsumerWidget {
   const StudentScreen({super.key});
 
 
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
