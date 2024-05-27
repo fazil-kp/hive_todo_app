@@ -61,7 +61,6 @@ List<RouteBase> _buildRoutes() {
         // ),
       ),
       routes: [
-        ..._staticRoutes(),
         ..._mainRoutes(),
       ],
     ),
@@ -72,23 +71,7 @@ Future<bool> login() async {
   return true;
 }
 
-List<GoRoute> _staticRoutes() {
-  return [
-    // GoRoute(path: RoutePathCore.splash.name, name: RoutePathCore.splash.name, builder: (BuildContext context, GoRouterState state) => const Splash()),
-    // GoRoute(path: RoutePathCore.login.name, name: RoutePathCore.login.name, builder: (BuildContext context, GoRouterState state) => const LoginScreen()),
-    // GoRoute(
-    //   path: RoutePathCore.todo.name,
-    //   name: RoutePathCore.todo.name,
-    //   pageBuilder: (BuildContext context, GoRouterState state) => CustomTransitionPage(
-    //     key: state.pageKey,
-    //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-    //       return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
-    //     },
-    //     child: const CustomScaffold(),
-    //   ),
-    // ),
-  ];
-}
+
 
 List<GoRoute> _mainRoutes() {
   List<GoRoute> mainGoRoutes = [];
