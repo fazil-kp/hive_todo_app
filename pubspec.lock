@@ -190,7 +190,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "237bcb85c042e4e14d3cc5f6999d28ba044a38ba"
+      resolved-ref: fb085328bc3447fd2b6f3c42ef9fa6733e0a6906
       url: "https://github.com/dev-liber/core.git"
     source: git
     version: "0.0.0"
