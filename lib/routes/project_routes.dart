@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../common_widgets/scaffold.dart';
-import '../login/login.dart';
 import 'core_route_list.dart';
 
 final GoRouter coreRoute = GoRouter(
@@ -40,7 +39,7 @@ List<RouteBase> _buildRoutes() {
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
         },
-        child: const LoginScreen(),
+        child: const CustomScaffold(),
 
         // FutureBuilder(
         //   future: login(),

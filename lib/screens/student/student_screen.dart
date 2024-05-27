@@ -1,14 +1,21 @@
+import 'package:core/widgets/core_alert_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../../view_model/riverpod.dart';
 import 'elements/student_add_card.dart';
 import 'elements/student_view_table.dart';
 
 class StudentScreen extends ConsumerWidget {
   const StudentScreen({super.key});
+
+
+
+
+
+
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,10 +42,20 @@ class StudentScreen extends ConsumerWidget {
           20.height,
           ElevatedButton(
             onPressed: () {
-              ref.watch(employeeVM).getCategories();
-              ref.watch(employeeVM).refresh();
+              showDialog(
+                  context: context,
+                  builder: (context) => const CustomAlertDialog(
+                        height: 370,
+                        title: "Hello",
+                        description: "This is a custom alert dialog box",
+                        firstButtonText: "Ok",
+                        secondButtonText: "Cancel",
+                        customWidget: Text("dmjndjnjn"),
+                        timerDelay: 10,
+                        image: "assets/images/logo.png",
+                      ));
             },
-            child: const Text("Api get check"),
+            child: const Text("Custom Alert Box"),
           ).center()
         ],
       ),
