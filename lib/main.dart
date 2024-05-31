@@ -16,7 +16,6 @@ void main() async {
 }
 
 class MainProject extends ConsumerWidget {
-  
   const MainProject({super.key});
 
   @override
@@ -32,6 +31,3 @@ class MainProject extends ConsumerWidget {
     );
   }
 }
-
-
-
