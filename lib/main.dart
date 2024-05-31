@@ -10,12 +10,14 @@ import 'view_model/riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter(Const.hiveBox);
+  await Hive.initFlutter();
   HttpOverrides.global = MyHttpOverrides();
   runApp(const ProviderScope(child: MainProject()));
 }
 
 class MainProject extends ConsumerWidget {
+
+  
   const MainProject({super.key});
 
   @override
