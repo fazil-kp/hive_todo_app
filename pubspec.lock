@@ -357,7 +357,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_timer_countdown:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_timer_countdown
       sha256: "0c73e1593ad7949c007752199a17e7ed50bb581568743dbc32f061f49873219e"

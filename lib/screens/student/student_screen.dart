@@ -1,9 +1,9 @@
-import 'package:core/widgets/core_alert_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../common_widgets/alert.dart';
 import 'elements/student_add_card.dart';
 import 'elements/student_view_table.dart';
 
@@ -37,7 +37,7 @@ class StudentScreen extends ConsumerWidget {
             onPressed: () {
               showDialog(
                   context: context,
-                  builder: (context) => const CustomAlertDialog(
+                  builder: (context) => const CustomAlertDialogE(
                         title: "Hello",
                         description: "This is a custom alert dialog box",
                         firstButtonText: "Ok",
