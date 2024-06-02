@@ -5,10 +5,8 @@ import 'package:core/constants/enums/common_enums.dart';
 import 'package:core/helpers/core_helpers.dart';
 import 'package:core/widgets/core_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 
 class CustomAlertDialogE extends StatelessWidget {
@@ -26,7 +24,8 @@ class CustomAlertDialogE extends StatelessWidget {
   final VoidCallback? firstButtonTap;
   final VoidCallback? secondButtonTap;
   final int? timerDelay;
-  const CustomAlertDialogE({super.key, this.title, this.description, this.firstButtonTap, this.secondButtonTap, this.content, this.firstButtonText, this.secondButtonText, this.firstbuttonType = ButtonType.primary, this.secondbuttonType = ButtonType.secondary, this.width, this.height, this.image, this.imageHeight, this.timerDelay});
+  final String? videoPath;
+  const CustomAlertDialogE({super.key, this.title, this.description, this.firstButtonTap, this.secondButtonTap, this.content, this.firstButtonText, this.secondButtonText, this.firstbuttonType = ButtonType.primary, this.secondbuttonType = ButtonType.secondary, this.width, this.height, this.image, this.imageHeight, this.timerDelay, this.videoPath});
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +38,25 @@ class CustomAlertDialogE extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
       content: SizedBox(
         width: width ?? 430,
-        height: height ?? (image != null ? 390 : 170),
+        height: height ??
+            (image != null
+                ? 370
+                : videoPath != null
+                    ? 400
+                    : 170),
         child: Column(
           children: [
-            // if (image != null) ...[
-            //   Container(
-            //     decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor, image: DecorationImage(image: AssetImage(image ?? ''), fit: BoxFit.cover)),
-            //     width: width ?? 430,
-            //     height: imageHeight ?? 210,
-            //   ),
-            // ],
-            const PopupVideo(),
+            if (image != null) ...[
+              Container(
+                decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor, image: DecorationImage(image: AssetImage(image ?? ''), fit: BoxFit.cover)),
+                width: width ?? 430,
+                height: imageHeight ?? 210,
+              ),
+            ],
+            if (videoPath != null)
+              PopupVideo(
+                videoPath: videoPath ?? '',
+              ),
             20.height,
             Column(
               children: [
@@ -207,8 +214,8 @@ class CustomAlertDialogE extends StatelessWidget {
 }
 
 class PopupVideo extends StatefulWidget {
-  const PopupVideo({super.key});
-
+  final String videoPath;
+  const PopupVideo({super.key, required this.videoPath});
   @override
   State<PopupVideo> createState() => _PopupVideoState();
 }
@@ -225,12 +232,7 @@ class _PopupVideoState extends State<PopupVideo> {
 
   Future<void> _initializeVideo() async {
     try {
-      final Directory tempDir = await getTemporaryDirectory();
-      final String tempPath = '${tempDir.path}/loginvideo_${DateTime.now().millisecondsSinceEpoch}.mp4';
-      final ByteData data = await rootBundle.load('assets/videos/loginvideo.mp4');
-      final List<int> bytes = data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
-      final File videoFile = await File(tempPath).writeAsBytes(bytes, flush: true);
-      _controller = VideoPlayerController.file(videoFile)
+      _controller = VideoPlayerController.file(File(widget.videoPath))
         ..initialize().then((_) {
           _controller?.setVolume(0.0);
           _controller?.play();
@@ -247,18 +249,15 @@ class _PopupVideoState extends State<PopupVideo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
-      width: double.infinity,
+    return SizedBox(
+      width: context.width(),
       child: _isControllerInitialized && _controller != null
           ? Container(
               clipBehavior: Clip.antiAlias,
               decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
               child: VideoPlayer(_controller!),
             )
-          : const Center(
-              child: CircularProgressIndicator(),
-            ),
+          : const Center(child: CircularProgressIndicator()),
     );
   }
 

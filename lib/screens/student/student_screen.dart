@@ -43,7 +43,8 @@ class StudentScreen extends ConsumerWidget {
                         firstButtonText: "Ok",
                         secondButtonText: "Cancel",
                         timerDelay: 10,
-                        image: "assets/images/logo.png",
+                        // image: "assets/images/logo.png",
+                        videoPath: "assets/videos/loginvideo.mp4",
                       ));
             },
             child: const Text("Custom Alert Box"),
