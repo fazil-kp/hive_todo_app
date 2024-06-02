@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:core/constants/config/core_color_code.dart';
 import 'package:core/constants/enums/common_enums.dart';
@@ -10,7 +9,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:project/login/side_bar_video.dart';
 import 'package:video_player/video_player.dart';
 
 class CustomAlertDialogE extends StatelessWidget {
@@ -250,14 +248,12 @@ class _PopupVideoState extends State<PopupVideo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
+      decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
       width: double.infinity,
       child: _isControllerInitialized && _controller != null
           ? Container(
               clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
-              // width: _controller!.value.size.width,
-              // height: _controller!.value.size.height,
+              decoration: const BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(22), topRight: Radius.circular(22)), color: whiteColor),
               child: VideoPlayer(_controller!),
             )
           : const Center(
