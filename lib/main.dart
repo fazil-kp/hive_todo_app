@@ -14,8 +14,6 @@ void main() async {
   HttpOverrides.global = MyHttpOverrides();
   runApp(const ProviderScope(child: MainProject()));
 }
-
-
 class MainProject extends ConsumerWidget {
   const MainProject({super.key});
   @override
