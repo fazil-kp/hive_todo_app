@@ -71,8 +71,6 @@ Future<bool> login() async {
   return true;
 }
 
-
-
 List<GoRoute> _mainRoutes() {
   List<GoRoute> mainGoRoutes = [];
 
