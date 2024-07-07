@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../helpers/key_board_short_cuts.dart';
-import '../routes/core_route_list.dart';
 import '../screens/student/student_screen.dart';
 import '../view_model/riverpod.dart';
 import 'app_bar.dart';
