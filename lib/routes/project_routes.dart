@@ -62,6 +62,7 @@ List<RouteBase> _buildRoutes() {
       ),
       routes: [
         ..._mainRoutes(),
+        ..._mobileRoutes(),
       ],
     ),
   ];
@@ -91,4 +92,27 @@ List<GoRoute> _mainRoutes() {
   }
 
   return mainGoRoutes;
+}
+
+List<GoRoute> _mobileRoutes() {
+  List<GoRoute> mobMainGoRoutes = [];
+
+  for (var mobRoute in mobileRouteList) {
+    mobMainGoRoutes.add(
+      GoRoute(
+        path: mobRoute.routeName!,
+        name: mobRoute.routeName,
+        pageBuilder: (BuildContext context, GoRouterState state) => CustomTransitionPage(
+          key: state.pageKey,
+          reverseTransitionDuration: const Duration(microseconds: 400),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(position: Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero).animate(animation), child: child);
+          },
+          child: mobRoute.widget!,
+        ),
+      ),
+    );
+  }
+
+  return mobMainGoRoutes;
 }

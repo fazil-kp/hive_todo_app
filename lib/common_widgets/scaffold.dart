@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../helpers/key_board_short_cuts.dart';
+import '../routes/core_route_list.dart';
 import '../screens/student/student_screen.dart';
 import '../view_model/riverpod.dart';
 import 'app_bar.dart';
@@ -21,6 +22,7 @@ class CustomScaffold extends ConsumerWidget {
               backgroundColor: ref.watch(studentVM).isLightTheme ? white : const Color(0xff131313),
               body: Column(
                 children: [
+                  Text("kooo", style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: blackColor, fontSize: 20)),
                   CustomAppBar(enums: enums, childWidget: childWidget),
                   Expanded(child: childWidget ?? const StudentScreen()),
                 ],

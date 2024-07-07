@@ -19,3 +19,5 @@ List<CoreRouteModel> mainRouteList = [
   const CoreRouteModel(id: 2, name: 'Test Two', routeName: 'test-two', widget: CustomScaffold(childWidget: TestTwo())),
   const CoreRouteModel(id: 2, name: 'Contacts', routeName: 'contact', widget: CustomScaffold(childWidget: ContactScreenScreen())),
 ];
+
+List<CoreRouteModel> mobileRouteList = [];
