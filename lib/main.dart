@@ -15,11 +15,7 @@ void main() async {
   runApp(const ProviderScope(child: MainProject()));
 }
 
-
-
-
 class MainProject extends ConsumerWidget {
-
   const MainProject({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
