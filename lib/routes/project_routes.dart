@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../common_widgets/scaffold.dart';
-import 'core_route_list.dart';
+import 'web_route_list.dart';
+import 'mobile_route_list.dart';
 
 final GoRouter coreRoute = GoRouter(
   initialLocation: "/",
@@ -61,9 +62,9 @@ List<RouteBase> _buildRoutes() {
         // ),
       ),
       routes: [
-        ..._mainRoutes(),
-        ..._mobileRoutes(),
-      ],
+       ..._mainRoutes(),
+       ... _mobileRoutes(),],
+      
     ),
   ];
 }

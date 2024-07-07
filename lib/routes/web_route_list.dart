@@ -12,10 +12,3 @@ List<CoreRouteModel> mainRouteList = [
   const CoreRouteModel(id: 3, name: 'Test Two', routeName: 'test-two', widget: CustomScaffold(childWidget: TestTwo())),
   const CoreRouteModel(id: 4, name: 'Contacts', routeName: 'contact', widget: CustomScaffold(childWidget: ContactScreenScreen())),
 ];
-
-List<CoreRouteModel> mobileRouteList = [
-  const CoreRouteModel(id: 1, name: 'Student', routeName: 'student', widget: CustomScaffold(childWidget: StudentScreen())),
-  const CoreRouteModel(id: 2, name: 'Employee', routeName: 'employee', widget: CustomScaffold(childWidget: EmployeeScreen())),
-  const CoreRouteModel(id: 3, name: 'Test Two', routeName: 'test-two', widget: CustomScaffold(childWidget: TestTwo())),
-  const CoreRouteModel(id: 4, name: 'Contacts', routeName: 'contact', widget: CustomScaffold(childWidget: ContactScreenScreen())),
-];
