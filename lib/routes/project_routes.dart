@@ -63,7 +63,7 @@ List<RouteBase> _buildRoutes() {
       ),
       routes: [
        ..._mainRoutes(),
-       ... _mobileRoutes(),],
+       ... _mobileRoutes()],
       
     ),
   ];
