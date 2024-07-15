@@ -61,10 +61,7 @@ List<RouteBase> _buildRoutes() {
         //   },
         // ),
       ),
-      routes: [
-       ..._mainRoutes(),
-       ... _mobileRoutes()],
-      
+      routes: [..._mainRoutes(), ..._mobileRoutes()],
     ),
   ];
 }
@@ -93,10 +90,7 @@ List<GoRoute> _mainRoutes() {
   }
 
   return mainGoRoutes;
-
-
 }
-
 
 List<GoRoute> _mobileRoutes() {
   List<GoRoute> mobMainGoRoutes = [];
