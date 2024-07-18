@@ -15,5 +15,4 @@ List<CoreRouteModel> mobileRouteList = [
   const CoreRouteModel(id: 4, name: 'Contacts', routeName: 'mob-contact', widget: CustomScaffold(childWidget: ContactScreenScreen())),
 
   //! Profile screen routes...................
-  
 ];
