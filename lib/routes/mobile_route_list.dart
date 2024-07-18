@@ -18,4 +18,10 @@ List<CoreRouteModel> mobileRouteList = [
 
   //! Profile screen routes...................
 
+
+
+
+
+
+
 ];
