@@ -22,5 +22,4 @@ List<CoreRouteModel> mobileRouteList = [
 
 
 
-
 ];
