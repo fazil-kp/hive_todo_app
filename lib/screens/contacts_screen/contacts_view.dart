@@ -39,8 +39,8 @@ class ContactsViewTable extends ConsumerWidget {
               ...ref.watch(contactVM).contactModelList.data.map(
                 (e) {
                   return DataRow2(
-                    color: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
-                      if (states.contains(MaterialState.selected)) {
+                    color: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+                      if (states.contains(WidgetState.selected)) {
                         return Theme.of(context).colorScheme.primary.withOpacity(0.08);
                       }
                       if (e.id == ref.read(contactVM).contactModel.id) {

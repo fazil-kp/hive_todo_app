@@ -36,8 +36,8 @@ class EmployeeViewTable extends ConsumerWidget {
             ],
             rows: ref.watch(employeeVM).categoryModelList.data.map((e) {
               return DataRow2(
-                color: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
-                  if (states.contains(MaterialState.selected)) return Theme.of(context).colorScheme.primary.withOpacity(0.08);
+                color: WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+                  if (states.contains(WidgetState.selected)) return Theme.of(context).colorScheme.primary.withOpacity(0.08);
                   if (e.categoryId == ref.read(employeeVM).categoryModel.categoryId) return Theme.of(context).colorScheme.primary.withOpacity(0.08);
                   return null;
                 }),
