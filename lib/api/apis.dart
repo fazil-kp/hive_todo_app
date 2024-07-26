@@ -3,4 +3,3 @@ class Api {
   static String contact = "http://localhost:5001/api/contacts";
 }
 
-
