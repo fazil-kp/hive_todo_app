@@ -1,6 +1,6 @@
-import 'package:core/constants/config/core_color_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mine/helpers/color/main_color_list.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../view_model/riverpod.dart';
@@ -24,9 +24,9 @@ class CustomAppBar extends ConsumerWidget {
               const Spacer(),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorCode.colorList(context).borderAshColor!),
+                  border: Border.all(color: context.mainColors.ashGrey!),
                   borderRadius: BorderRadius.circular(50),
-                  color: ColorCode.colorList(context).cardColor!,
+                  color: whiteColor,
                 ),
                 padding: const EdgeInsets.all(4),
                 child: Icon(

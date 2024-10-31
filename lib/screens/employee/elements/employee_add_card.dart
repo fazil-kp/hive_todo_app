@@ -1,11 +1,12 @@
-import 'package:core/constants/config/core_color_code.dart';
-import 'package:core/widgets/core_date_picker.dart';
-import 'package:core/widgets/core_drop_down.dart';
-import 'package:core/widgets/core_text_field.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mine/helpers/color/main_color_list.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:project/helper/date.dart';
+import 'package:project/helper/drop_down.dart';
+import 'package:project/helper/textfield.dart';
 
 import '../../../view_model/riverpod.dart';
 
@@ -16,7 +17,7 @@ class EmployeeAddCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: ColorCode.colorList(context).borderAshColor!), color: ColorCode.colorList(context).whiteBlack, boxShadow: defaultBoxShadow()),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color:context.mainColors.ashGrey!), color: whiteColor, boxShadow: defaultBoxShadow()),
       width: 400,
       height: MediaQuery.of(context).size.height - 200,
       child: Column(
@@ -26,7 +27,7 @@ class EmployeeAddCard extends ConsumerWidget {
           Container(
             height: context.height() - 265,
             decoration: BoxDecoration(
-              border: Border.all(color: ColorCode.colorList(context).borderAshColor!),
+              border: Border.all(color:context.mainColors.ashGrey!),
               borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             ),
             padding: const EdgeInsets.only(left: 16, right: 16),
@@ -44,7 +45,7 @@ class EmployeeAddCard extends ConsumerWidget {
                         Text(
                           ref.watch(studentVM).studentModel.id == null ? 'Add Employee' : 'Update Employee',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: ColorCode.colorList(context).blackWhite,
+                                color: blackColor,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: .5,
@@ -54,7 +55,7 @@ class EmployeeAddCard extends ConsumerWidget {
                         Text(
                           ref.watch(studentVM).studentModel.id == null ? 'Add Employee Details' : 'Update Employee Details',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: ColorCode.colorList(context).ashWhiteLabel,
+                                color: grey,
                                 fontSize: 12,
                               ),
                         ),
@@ -73,11 +74,11 @@ class EmployeeAddCard extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           width: 40,
                           height: 40,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorCode.colorList(context).redOpacityWhite!),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: context.mainColors.secondary),
                           child: Icon(
                             Icons.delete,
                             size: 16,
-                            color: ColorCode.colorList(context).primary,
+                            color: context.mainColors.primary,
                           ).center(),
                         ),
                       ),
@@ -92,11 +93,11 @@ class EmployeeAddCard extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorCode.colorList(context).redOpacityWhite!),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: context.mainColors.secondary),
                         child: Icon(
                           ref.watch(studentVM).studentModel.id == null ? Icons.close : Icons.arrow_left,
                           size: 16,
-                          color: ColorCode.colorList(context).primary,
+                          color: context.mainColors.primary,
                         ).center(),
                       ),
                     ),

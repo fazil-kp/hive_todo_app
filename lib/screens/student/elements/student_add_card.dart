@@ -1,11 +1,10 @@
-import 'package:core/constants/config/core_color_code.dart';
-import 'package:core/widgets/core_date_picker.dart';
-import 'package:core/widgets/core_drop_down.dart';
-import 'package:core/widgets/core_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:project/helper/date.dart';
+import 'package:project/helper/drop_down.dart';
+import 'package:project/helper/textfield.dart';
 
 import '../../../view_model/riverpod.dart';
 
@@ -16,7 +15,7 @@ class StudentAddCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: ColorCode.colorList(context).borderAshColor!), color: ColorCode.colorList(context).whiteBlack, boxShadow: defaultBoxShadow()),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: grey), color:whiteColor, boxShadow: defaultBoxShadow()),
       width: 400,
       height: MediaQuery.of(context).size.height - 200,
       child: Column(
@@ -26,7 +25,7 @@ class StudentAddCard extends ConsumerWidget {
           Container(
             height: context.height() - 265,
             decoration: BoxDecoration(
-              border: Border.all(color: ColorCode.colorList(context).borderAshColor!),
+              border: Border.all(color: grey),
               borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
             ),
             padding: const EdgeInsets.only(left: 16, right: 16),
@@ -45,7 +44,7 @@ class StudentAddCard extends ConsumerWidget {
                         Text(
                           ref.watch(studentVM).studentModel.id == null ? 'Add Student' : 'Update Student',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: ColorCode.colorList(context).blackWhite,
+                                color: blackColor,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: .5,
@@ -55,7 +54,7 @@ class StudentAddCard extends ConsumerWidget {
                         Text(
                           ref.watch(studentVM).studentModel.id == null ? 'Add Student Details' : 'Update Student Details',
                           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: ColorCode.colorList(context).ashWhiteLabel,
+                                color: grey,
                                 fontSize: 12,
                               ),
                         ),
@@ -73,11 +72,11 @@ class StudentAddCard extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           width: 40,
                           height: 40,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorCode.colorList(context).redOpacityWhite!),
+                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: redColor.withOpacity(.5)),
                           child: Icon(
                             Icons.delete,
                             size: 16,
-                            color: ColorCode.colorList(context).primary,
+                            color: redColor,
                           ).center(),
                         ),
                       ),
@@ -92,11 +91,11 @@ class StudentAddCard extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(vertical: 10),
                         width: 40,
                         height: 40,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: ColorCode.colorList(context).redOpacityWhite!),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: redColor.withOpacity(.5)),
                         child: Icon(
                           ref.watch(studentVM).studentModel.id == null ? Icons.close : Icons.arrow_left,
                           size: 16,
-                          color: ColorCode.colorList(context).primary,
+                          color: redColor,
                         ).center(),
                       ),
                     ),
@@ -120,7 +119,7 @@ class StudentAddCard extends ConsumerWidget {
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                     FilteringTextInputFormatter.digitsOnly,
                   ],
-                  value: ref.watch(studentVM).studentModel.phone.toString() == 'null' ? '' : ref.watch(studentVM).studentModel.phone.toString(),
+                  value: ref.watch(studentVM).studentModel.phone.toString().isEmpty ? '' : ref.watch(studentVM).studentModel.phone.toString(),
                   onChanged: (val) {
                     ref.read(studentVM).studentModel = ref.read(studentVM).studentModel.copyWith(phone: val.toInt());
                   },

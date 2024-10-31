@@ -1,6 +1,5 @@
-import 'package:core/helpers/core_helpers.dart';
-import 'package:core/helpers/core_hive_db.dart';
 import 'package:flutter/material.dart';
+import 'package:mine/helpers/hive/hive_db.dart';
 
 import '../model/student_model.dart';
 
@@ -20,9 +19,9 @@ class StudentVM extends ChangeNotifier {
       studentModel = studentModel.copyWith(dob: DateTime.now());
       studentModel = studentModel.copyWith(id: studentModelList.data.length + 1);
       studentModelList = studentModelList.copyWith(data: [...studentModelList.data, studentModel]);
-      await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+      await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
       await getStudent();
-      printx(studentModelList.toJson());
+      print(studentModelList.toJson());
     }
     notifyListeners();
   }
@@ -40,12 +39,12 @@ class StudentVM extends ChangeNotifier {
         return e;
       }
     }).toList());
-    await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+    await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
     notifyListeners();
   }
 
   Future<void> getStudent() async {
-    var data = await CoreDB.fromDb(Const.hiveBox, "data");
+    var data = await SmartDB.fromDb("SmartDB", "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
     }
@@ -54,12 +53,12 @@ class StudentVM extends ChangeNotifier {
 
   delete(int id) async {
     studentModelList = studentModelList.copyWith(data: studentModelList.data.where((element) => element.id != id).toList());
-    await CoreDB.toDb(Const.hiveBox, "data", studentModelList.toJson());
+    await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
     notifyListeners();
   }
 
   void search() async {
-    var data = await CoreDB.fromDb(Const.hiveBox, "data");
+    var data = await SmartDB.fromDb("SmartDB", "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
       studentModelList = studentModelList.copyWith(

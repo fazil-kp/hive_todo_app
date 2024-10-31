@@ -1,12 +1,11 @@
-import 'package:core/constants/enums/date_time_enums.dart';
-import 'package:core/widgets/core_custom_table.dart';
-import 'package:core/widgets/core_main_widget.dart';
-import 'package:core/widgets/core_text_field.dart';
-import 'package:core/constants/config/core_color_code.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:project/helper/date_enum.dart';
+import 'package:project/helper/main_widget.dart';
+import 'package:project/helper/table.dart';
+import 'package:project/helper/textfield.dart';
 import '../../../view_model/riverpod.dart';
 
 class StudentViewTable extends ConsumerWidget {
@@ -21,7 +20,7 @@ class StudentViewTable extends ConsumerWidget {
         children: [
           CustomTextField(
             hintText: "Search",
-            prefixIcon: Icon(Icons.search, color: ColorCode.colorList(context).blackWhite?.withOpacity(.5)),
+            prefixIcon: Icon(Icons.search, color: blackColor.withOpacity(.5)),
             value: ref.read(studentVM).searchFilter,
             onChanged: (val) {
               ref.read(studentVM).searchFilter = val;

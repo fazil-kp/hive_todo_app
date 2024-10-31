@@ -1,6 +1,6 @@
-import 'package:core/helpers/core_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:project/helper/constants.dart';
 
 import '../common_widgets/scaffold.dart';
 import 'web_route_list.dart';

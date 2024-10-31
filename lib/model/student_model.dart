@@ -7,7 +7,7 @@ part 'student_model.g.dart';
 class StudentModel with _$StudentModel {
   const factory StudentModel({
     int? id,
-    int? phone,
+    int? phone,        
     String? name,
     String? address,
     String? email,

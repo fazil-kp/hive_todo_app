@@ -1,4 +1,3 @@
-import 'package:core/widgets/core_alert_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -34,17 +33,17 @@ class StudentScreen extends ConsumerWidget {
           20.height,
           ElevatedButton(
             onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (context) => const CustomAlertDialog(
-                        title: "Hello",
-                        description: "This is a custom alert dialog box",
-                        firstButtonText: "Ok",
-                        secondButtonText: "Cancel",
-                        timerDelay: 10,
-                        // image: "assets/images/logo.png",
-                        videoPath: "assets/videos/loginvideo.mp4",
-                      ));
+              // showDialog(
+              //     context: context,
+              //     builder: (context) => const CustomAlertDialog(
+              //           title: "Hello",
+              //           description: "This is a custom alert dialog box",
+              //           firstButtonText: "Ok",
+              //           secondButtonText: "Cancel",
+              //           timerDelay: 10,
+              //           // image: "assets/images/logo.png",
+              //           videoPath: "assets/videos/loginvideo.mp4",
+              //         ));
             },
             child: const Text("Custom Alert Box"),
           ).center()
