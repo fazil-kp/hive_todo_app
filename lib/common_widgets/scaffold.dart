@@ -19,7 +19,6 @@ class CustomScaffold extends ConsumerWidget {
             backgroundColor: ref.watch(studentVM).isLightTheme ? white : const Color(0xff131313),
             body: Column(
               children: [
-                Text("kooo", style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: blackColor, fontSize: 20)),
                 CustomAppBar(enums: enums, childWidget: childWidget),
                 Expanded(child: childWidget ?? const StudentScreen()),
               ],
