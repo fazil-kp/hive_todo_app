@@ -15,7 +15,7 @@ class StudentAddCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: grey), color:whiteColor, boxShadow: defaultBoxShadow()),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: grey), color: whiteColor, boxShadow: defaultBoxShadow()),
       width: 400,
       height: MediaQuery.of(context).size.height - 200,
       child: Column(
@@ -119,7 +119,7 @@ class StudentAddCard extends ConsumerWidget {
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                     FilteringTextInputFormatter.digitsOnly,
                   ],
-                  value: ref.watch(studentVM).studentModel.phone.toString().isEmpty ? '' : ref.watch(studentVM).studentModel.phone.toString(),
+                  value: ref.watch(studentVM).studentModel.phone.toString(),
                   onChanged: (val) {
                     ref.read(studentVM).studentModel = ref.read(studentVM).studentModel.copyWith(phone: val.toInt());
                   },
