@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mine/helpers/color/main_color_list.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:project/view_model/student_vm.dart';
 
-import '../view_model/riverpod.dart';
 
 class CustomAppBar extends ConsumerWidget {
   final Widget? childWidget;

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:project/helper/constants.dart';
+import 'package:project/view_model/student_vm.dart';
 import 'routes/project_routes.dart';
-import 'view_model/riverpod.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +17,6 @@ void main() async {
 //   for (int i = 0; i < 10; i++) {
 //     print('hello ${i + 1}');
 //   }
-
 // }
 
 class MainProject extends ConsumerWidget {

@@ -6,7 +6,7 @@ import 'package:project/helper/date_enum.dart';
 import 'package:project/helper/main_widget.dart';
 import 'package:project/helper/table.dart';
 import 'package:project/helper/textfield.dart';
-import '../../../view_model/riverpod.dart';
+import 'package:project/view_model/student_vm.dart';
 
 class StudentViewTable extends ConsumerWidget {
   const StudentViewTable({super.key});

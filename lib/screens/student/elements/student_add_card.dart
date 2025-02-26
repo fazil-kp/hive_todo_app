@@ -5,8 +5,8 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:project/helper/date.dart';
 import 'package:project/helper/drop_down.dart';
 import 'package:project/helper/textfield.dart';
+import 'package:project/view_model/student_vm.dart';
 
-import '../../../view_model/riverpod.dart';
 
 class StudentAddCard extends ConsumerWidget {
   const StudentAddCard({super.key});

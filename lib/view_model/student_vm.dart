@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mine/helpers/hive/hive_db.dart';
 
 import '../model/student_model.dart';
+
+final studentVM = ChangeNotifierProvider<StudentVM>((ref) => StudentVM());
 
 class StudentVM extends ChangeNotifier {
   StudentModel studentModel = const StudentModel();
