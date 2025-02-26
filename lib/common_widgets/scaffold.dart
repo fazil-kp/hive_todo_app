@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:project/view_model/student_vm.dart';
 
-import '../screens/student/student_screen.dart';
+import '../screens/todo/student_screen.dart';
 import 'app_bar.dart';
 
 class CustomScaffold extends ConsumerWidget {

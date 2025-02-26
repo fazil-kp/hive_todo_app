@@ -1,7 +1,7 @@
 import 'package:mine/models/route_model.dart';
 
 import '../common_widgets/scaffold.dart';
-import '../screens/student/student_screen.dart';
+import '../screens/todo/student_screen.dart';
 
 
 List<RouteModel> mainRouteList = [
