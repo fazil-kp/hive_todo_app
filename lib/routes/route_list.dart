@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../common_widgets/scaffold.dart';
 import '../screens/todo/student_screen.dart';
 
-List<RouteModel> mainRouteList = [
-  RouteModel(id: 1, name: 'Student', routeName: 'student', widget: ChangeNotifierProvider(create: (_) => TodoVm(), child: CustomScaffold(childWidget: TodoScreen()))),
-];
+class MainRoute {
+  static List<RouteModel> mainRouteList = [
+    RouteModel(id: 1, name: 'Student', routeName: 'student', widget: ChangeNotifierProvider(create: (_) => TodoVm(), child: const CustomScaffold(childWidget: TodoScreen()))),
+  ];
+}

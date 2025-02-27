@@ -47,7 +47,7 @@ List<RouteBase> buildRoutes() {
 
 List<GoRoute> mainRoutes() {
   List<GoRoute> mainRouteX = [];
-  for (var route in mainRouteList) {
+  for (var route in MainRoute.mainRouteList) {
     if (route.routeName != null && route.widget != null) {
       mainRouteX.add(
         GoRoute(
