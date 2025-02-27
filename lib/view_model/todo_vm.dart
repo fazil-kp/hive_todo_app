@@ -4,7 +4,6 @@ import 'package:mine/helper/helper.dart';
 
 import '../model/student_model.dart';
 
-
 class TodoVm extends ChangeNotifier {
   StudentModel studentModel = const StudentModel();
   StudentModelList studentModelList = const StudentModelList();
@@ -29,10 +28,7 @@ class TodoVm extends ChangeNotifier {
   }
 
   Future<void> update(int id) async {
-    if (studentModel.name == null || studentModel.name!.isEmpty) {
-      notifyListeners();
-      return;
-    }
+    if (studentModel.name == null || studentModel.name!.isEmpty) {}
     studentModelList = studentModelList.copyWith(
         data: studentModelList.data.map((e) {
       if (e.id == id) {

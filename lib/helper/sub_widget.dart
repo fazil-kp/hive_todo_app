@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mine/helpers/color/main_color_list.dart';
+import 'package:mine/config/color/main_color_list.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 

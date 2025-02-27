@@ -1,4 +1,4 @@
-import 'package:mine/models/route_model.dart';
+import 'package:mine/model/route_model.dart';
 import 'package:project/view_model/todo_vm.dart';
 import 'package:provider/provider.dart';
 
