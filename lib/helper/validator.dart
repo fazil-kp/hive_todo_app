@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:mine/extension/string_extension.dart';
 
 class Validator<T extends Object> {
   final String? Function(T? value) validator;

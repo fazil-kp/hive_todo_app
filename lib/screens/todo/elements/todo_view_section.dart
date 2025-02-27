@@ -1,6 +1,7 @@
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:mine/config/color/colors.dart';
+import 'package:mine/extension/integer_extension.dart';
 import 'package:project/helper/date_enum.dart';
 import 'package:project/helper/main_widget.dart';
 import 'package:project/helper/table.dart';

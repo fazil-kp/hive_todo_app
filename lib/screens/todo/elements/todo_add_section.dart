@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:mine/config/color/colors.dart';
+import 'package:mine/extension/context_extension.dart';
+import 'package:mine/extension/integer_extension.dart';
+import 'package:mine/extension/widget_extension.dart';
 import 'package:project/helper/date.dart';
 import 'package:project/helper/drop_down.dart';
 import 'package:project/helper/textfield.dart';
@@ -15,7 +18,7 @@ class TodoAddSection extends StatelessWidget {
     return Consumer<TodoVm>(builder: (context, vm, _) {
       return Container(
         padding: const EdgeInsets.all(8.0),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: grey), color: whiteColor, boxShadow: defaultBoxShadow()),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: grey), color: whiteColor),
         width: 400,
         height: MediaQuery.of(context).size.height - 200,
         child: Column(

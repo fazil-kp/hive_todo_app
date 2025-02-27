@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mine/config/color/colors.dart';
 import 'package:mine/config/color/main_color_list.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:mine/extension/context_extension.dart';
 
 class MainWidget extends StatelessWidget {
   final double? mainHeight;
@@ -17,7 +18,11 @@ class MainWidget extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.all(8.0),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), border: Border.all(color: context.mainColors.ashGrey!), color: whiteColor, boxShadow: defaultBoxShadow()),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: context.mainColors.ashGrey!),
+            color: whiteColor,
+          ),
           width: mainWidth ?? MediaQuery.of(context).size.width - 500,
           height: mainHeight ?? MediaQuery.of(context).size.height - 200,
           child: Container(

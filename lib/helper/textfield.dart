@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:auto_binding_field/auto_binding_field.dart';
 import 'package:flutter/services.dart';
+import 'package:mine/config/color/colors.dart';
 import 'package:mine/config/color/main_color_list.dart';
 import 'package:mine/config/responsive/responsive_helper.dart';
 
-import 'package:nb_utils/nb_utils.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? label;

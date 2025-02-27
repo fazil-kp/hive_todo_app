@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
+import 'package:mine/config/color/colors.dart';
 
 class CustomInputDecoration {
   static InputDecoration build2({
