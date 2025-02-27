@@ -5,9 +5,9 @@ import 'package:mine/extension/context_extension.dart';
 import 'package:mine/extension/integer_extension.dart';
 import 'package:mine/extension/string_extension.dart';
 import 'package:mine/extension/widget_extension.dart';
+import 'package:mine/plugin/custom_date_picker.dart';
 import 'package:mine/plugin/custom_drop_down.dart';
 import 'package:mine/plugin/custom_text_field.dart';
-import 'package:project/helper/date.dart';
 
 import 'package:project/view_model/todo_vm.dart';
 import 'package:provider/provider.dart';
@@ -152,7 +152,7 @@ class TodoAddSection extends StatelessWidget {
                     items: const ['Male', 'Female'],
                   ),
                   10.height,
-                  DatePicker(
+                  CustomDatePicker(
                     label: 'Date of Birth',
                     width: double.infinity,
                     onDateChanged: (val) {
@@ -162,7 +162,7 @@ class TodoAddSection extends StatelessWidget {
                     value: vm.studentModel.dob ?? DateTime.now(),
                   ),
                   10.height,
-                  DatePicker(
+                  CustomDatePicker(
                     label: 'Duration',
                     isRangePicker: true,
                     width: double.infinity,

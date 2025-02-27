@@ -24,7 +24,6 @@ dependencies:
   hive_flutter: ^1.1.0
   auto_binding_field: ^0.0.7
   dropdown_search: ^5.0.6
-  syncfusion_flutter_datepicker: ^27.1.57
   cupertino_icons: ^1.0.8
 
 dev_dependencies:

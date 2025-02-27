@@ -369,10 +369,10 @@ packages:
     dependency: transitive
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "3df61194eb431efc39c4ceba583b95633a403f46c9fd341e550ce0bfa50e9aa5"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
+    version: "0.20.2"
   io:
     dependency: transitive
     description:
@@ -506,7 +506,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "6903ea8e0ad2ec70078c23ec645a74599ffa736d"
+      resolved-ref: adda6a3a8835407c9cd5638e6f27cc087be0dd1a
       url: "https://github.com/fazil-kp/mine.git"
     source: git
     version: "0.0.1"
@@ -743,18 +743,18 @@ packages:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
-      sha256: "325f519ce4ad8edd81811c21b853d72018529e353584490824da0555156ba076"
+      sha256: "393db014b90865222f8c442dd989a9ba6107bb92bf4d4774257d60a3ee05053f"
       url: "https://pub.dev"
     source: hosted
-    version: "27.2.5"
+    version: "28.2.7"
   syncfusion_flutter_datepicker:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: syncfusion_flutter_datepicker
-      sha256: "2177e49eb8a1c0fce7081e40f5613c986d00e5e63cbeb98a6012f65ca156bfc7"
+      sha256: "99caad48fb56397fc9208618a09b7bb0f61c14eebfc6bd9196bec7c20a4c4999"
       url: "https://pub.dev"
     source: hosted
-    version: "27.2.5"
+    version: "28.2.7"
   term_glyph:
     dependency: transitive
     description:
