@@ -150,6 +150,7 @@ class TodoAddSection extends StatelessWidget {
                     },
                     hintText: "Gender",
                     items: const ['Male', 'Female'],
+                    
                   ),
                   10.height,
                   CustomDatePicker(
@@ -183,8 +184,6 @@ class TodoAddSection extends StatelessWidget {
                     vm.update(vm.studentModel.id ?? 0);
                   }
                   vm.clear();
-                  await Future.delayed(const Duration(seconds: 1));
-                  vm.refresh();
                 },
                 child: Text(
                   vm.studentModel.id == null ? "Add Student" : "Update Student",

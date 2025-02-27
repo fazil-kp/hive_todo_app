@@ -506,7 +506,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: adda6a3a8835407c9cd5638e6f27cc087be0dd1a
+      resolved-ref: c7a4ecbb13f4c2859a54f9277544425dcc10153d
       url: "https://github.com/fazil-kp/mine.git"
     source: git
     version: "0.0.1"
