@@ -5,9 +5,10 @@ import 'package:mine/extension/context_extension.dart';
 import 'package:mine/extension/integer_extension.dart';
 import 'package:mine/extension/string_extension.dart';
 import 'package:mine/extension/widget_extension.dart';
+import 'package:mine/plugin/custom_drop_down.dart';
+import 'package:mine/plugin/custom_text_field.dart';
 import 'package:project/helper/date.dart';
-import 'package:project/helper/drop_down.dart';
-import 'package:project/helper/textfield.dart';
+
 import 'package:project/view_model/todo_vm.dart';
 import 'package:provider/provider.dart';
 
@@ -77,7 +78,7 @@ class TodoAddSection extends StatelessWidget {
                             width: 40,
                             height: 40,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: redColor.withOpacity(.5)),
-                            child: Icon(
+                            child: const Icon(
                               Icons.delete,
                               size: 16,
                               color: redColor,
@@ -107,7 +108,6 @@ class TodoAddSection extends StatelessWidget {
                   ),
                   15.height,
                   CustomTextField(
-                    width: double.infinity,
                     hintText: 'Student Name',
                     value: vm.studentModel.name,
                     onChanged: (val) {
@@ -116,7 +116,6 @@ class TodoAddSection extends StatelessWidget {
                   ),
                   20.height,
                   CustomTextField(
-                    width: double.infinity,
                     hintText: 'Phone',
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(10),
@@ -130,7 +129,6 @@ class TodoAddSection extends StatelessWidget {
                   ),
                   20.height,
                   CustomTextField(
-                    width: double.infinity,
                     hintText: 'Address',
                     value: vm.studentModel.address,
                     onChanged: (val) {
@@ -139,7 +137,6 @@ class TodoAddSection extends StatelessWidget {
                   ),
                   20.height,
                   CustomTextField(
-                    width: double.infinity,
                     hintText: 'Email',
                     value: vm.studentModel.email,
                     onChanged: (val) {
@@ -148,11 +145,10 @@ class TodoAddSection extends StatelessWidget {
                   ),
                   20.height,
                   CustomDropDown(
-                    width: 348,
                     onChanged: (val) {
                       vm.studentModel = vm.studentModel.copyWith(gender: val);
                     },
-                    label: "Gender",
+                    hintText: "Gender",
                     items: const ['Male', 'Female'],
                   ),
                   10.height,

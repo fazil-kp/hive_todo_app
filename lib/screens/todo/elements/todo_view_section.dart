@@ -2,10 +2,10 @@ import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:mine/config/color/colors.dart';
 import 'package:mine/extension/integer_extension.dart';
+import 'package:mine/plugin/custom_text_field.dart';
 import 'package:project/helper/date_enum.dart';
 import 'package:project/helper/main_widget.dart';
 import 'package:project/helper/table.dart';
-import 'package:project/helper/textfield.dart';
 import 'package:project/view_model/todo_vm.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +22,7 @@ class TodoViewSection extends StatelessWidget {
           children: [
             CustomTextField(
               hintText: "Search",
-              prefixIcon: Icon(Icons.search, color: blackColor.withOpacity(.5)),
+              prefix: Icon(Icons.search, color: blackColor.withOpacity(.5)),
               value: vm.searchFilter,
               onChanged: (val) {
                 vm.searchFilter = val;
