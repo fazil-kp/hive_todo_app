@@ -6,7 +6,9 @@ import '../common_widgets/scaffold.dart';
 import '../screens/todo/student_screen.dart';
 
 class MainRoute {
+  static const String todo = "todo";
+
   static List<RouteModel> mainRouteList = [
-    RouteModel(id: 1, name: 'Student', routeName: 'student', widget: ChangeNotifierProvider(create: (_) => TodoVm(), child: const CustomScaffold(childWidget: TodoScreen()))),
+    RouteModel(id: 1, name: 'Student', routeName: todo, widget: ChangeNotifierProvider(create: (_) => TodoVm(), child: const CustomScaffold(childWidget: TodoScreen()))),
   ];
 }
