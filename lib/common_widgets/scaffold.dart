@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
-
+import 'package:mine/config/color/colors.dart';
 import '../screens/todo/student_screen.dart';
 import 'app_bar.dart';
 
@@ -14,7 +13,7 @@ class CustomScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return hideScaffold == false
         ? Scaffold(
-            backgroundColor:  white ,
+            backgroundColor: whiteColor,
             body: Column(
               children: [
                 CustomAppBar(enums: enums, childWidget: childWidget),
