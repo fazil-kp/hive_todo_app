@@ -6,7 +6,7 @@ import 'package:project/helper/constants.dart';
 import 'package:project/helper/provider_list.dart';
 import 'package:provider/provider.dart';
 
-import 'routes/project_routes.dart';
+import 'routes/route.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
