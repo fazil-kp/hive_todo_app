@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import 'elements/todo_add_section.dart';
 import 'elements/todo_view_section.dart';
 
-class TodoScreen extends ConsumerWidget {
+class TodoScreen extends StatelessWidget {
   const TodoScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(

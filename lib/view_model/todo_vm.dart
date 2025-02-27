@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mine/helpers/hive/hive_db.dart';
 
 import '../model/student_model.dart';
 
-final studentVM = ChangeNotifierProvider<StudentVM>((ref) => StudentVM());
 
-class StudentVM extends ChangeNotifier {
+class TodoVm extends ChangeNotifier {
   StudentModel studentModel = const StudentModel();
   StudentModelList studentModelList = const StudentModelList();
   bool isLightTheme = true;
   String? searchFilter;
 
-  StudentVM() {
+  TodoVm() {
     getStudent();
   }
 
