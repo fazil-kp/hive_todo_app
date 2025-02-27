@@ -13,7 +13,7 @@ void main() async {
   await Hive.initFlutter();
   runApp(
     MultiProvider(
-      providers: providers,
+      providers: providerList,
       child: const TodoProject(),
     ),
   );
