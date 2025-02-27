@@ -3,7 +3,7 @@ import 'package:project/view_model/todo_vm.dart';
 import 'package:provider/provider.dart';
 
 import '../common_widgets/scaffold.dart';
-import '../screens/todo/todo_screen.dart';
+import '../view/todo/todo_screen.dart';
 
 class MainRoute {
   static const String todo = "todo";
