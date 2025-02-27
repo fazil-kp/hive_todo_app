@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mine/config/color/colors.dart';
-import '../screens/todo/student_screen.dart';
+import '../screens/todo/todo_screen.dart';
 import 'app_bar.dart';
 
 class CustomScaffold extends StatelessWidget {
