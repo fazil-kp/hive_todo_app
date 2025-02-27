@@ -5,7 +5,7 @@ import 'package:project/helper/constants.dart';
 import '../common_widgets/scaffold.dart';
 import 'route_list.dart';
 
-final GoRouter coreRoute = GoRouter(
+final GoRouter routeX = GoRouter(
   initialLocation: "/",
   redirectLimit: 3,
   errorBuilder: (context, state) {
@@ -25,10 +25,10 @@ final GoRouter coreRoute = GoRouter(
     );
   },
   navigatorKey: Const.navigatorKey,
-  routes: _buildRoutes(),
+  routes: buildRoutes(),
 );
 
-List<RouteBase> _buildRoutes() {
+List<RouteBase> buildRoutes() {
   return [
     GoRoute(
       path: '/',
@@ -57,10 +57,7 @@ List<GoRoute> mainRoutes() {
             return CustomTransitionPage(
               key: state.pageKey,
               transitionsBuilder: (context, animation, secondaryAnimation, child) {
-                return FadeTransition(
-                  opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation),
-                  child: child,
-                );
+                return FadeTransition(opacity: CurveTween(curve: Curves.easeInOutSine).animate(animation), child: child);
               },
               child: route.widget!,
             );

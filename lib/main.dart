@@ -25,7 +25,7 @@ class TodoProject extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: coreRoute,
+      routerConfig: routeX,
       title: Const.appName,
       scrollBehavior: const MaterialScrollBehavior().copyWith(dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown}),
       themeMode: ThemeMode.light,
