@@ -122,7 +122,7 @@ class TodoAddSection extends StatelessWidget {
                       FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                       FilteringTextInputFormatter.digitsOnly,
                     ],
-                    value: vm.studentModel.phone.toString(),
+                    value: (vm.studentModel.phone ?? '').toString(),
                     onChanged: (val) {
                       vm.studentModel = vm.studentModel.copyWith(phone: val.toInt());
                     },
