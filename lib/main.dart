@@ -10,17 +10,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   // HttpOverrides.global = MyHttpOverrides();
-  runApp(const ProviderScope(child: MainProject()));
+  runApp(const ProviderScope(child: TodoProject()));
 }
 
-// void main() {
-//   for (int i = 0; i < 10; i++) {
-//     print('hello ${i + 1}');
-//   }
-// }
-
-class MainProject extends ConsumerWidget {
-  const MainProject({super.key});
+class TodoProject extends ConsumerWidget {
+  const TodoProject({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(

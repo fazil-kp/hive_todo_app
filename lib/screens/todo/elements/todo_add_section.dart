@@ -7,9 +7,8 @@ import 'package:project/helper/drop_down.dart';
 import 'package:project/helper/textfield.dart';
 import 'package:project/view_model/student_vm.dart';
 
-
-class StudentAddCard extends ConsumerWidget {
-  const StudentAddCard({super.key});
+class TodoAddSection extends ConsumerWidget {
+  const TodoAddSection({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

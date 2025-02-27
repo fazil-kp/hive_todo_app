@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'elements/student_add_card.dart';
-import 'elements/student_view_table.dart';
+import 'elements/todo_add_section.dart';
+import 'elements/todo_view_section.dart';
 
-class StudentScreen extends ConsumerWidget {
-  const StudentScreen({super.key});
+class TodoScreen extends ConsumerWidget {
+  const TodoScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,9 +18,9 @@ class StudentScreen extends ConsumerWidget {
         children: [
           Row(
             children: [
-              const StudentAddCard(),
+              const TodoAddSection(),
               20.width,
-              const StudentViewTable(),
+              const TodoViewSection(),
             ],
           ),
         ],

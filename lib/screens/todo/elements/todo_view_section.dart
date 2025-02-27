@@ -8,8 +8,8 @@ import 'package:project/helper/table.dart';
 import 'package:project/helper/textfield.dart';
 import 'package:project/view_model/student_vm.dart';
 
-class StudentViewTable extends ConsumerWidget {
-  const StudentViewTable({super.key});
+class TodoViewSection extends ConsumerWidget {
+  const TodoViewSection({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -8,9 +8,8 @@ List<RouteModel> mobileRouteList = [
   
   //! home screen routes...................
   
-  const RouteModel(id: 1, name: 'Student', routeName: 'mob-student', widget: CustomScaffold(childWidget: StudentScreen())),
-  // const RouteModel(id: 2, name: 'Employee', routeName: 'mob-employee', widget: CustomScaffold(childWidget: EmployeeScreen())),
-  // const RouteModel(id: 4, name: 'Contacts', routeName: 'mob-contact', widget: CustomScaffold(childWidget: ContactScreenScreen())),
+  const RouteModel(id: 1, name: 'Student', routeName: 'mob-student', widget: CustomScaffold(childWidget: TodoScreen())),
+
 
   //! Profile screen routes...................
 

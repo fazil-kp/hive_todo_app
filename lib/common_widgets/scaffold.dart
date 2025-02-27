@@ -20,7 +20,7 @@ class CustomScaffold extends ConsumerWidget {
             body: Column(
               children: [
                 CustomAppBar(enums: enums, childWidget: childWidget),
-                Expanded(child: childWidget ?? const StudentScreen()),
+                Expanded(child: childWidget ?? const TodoScreen()),
               ],
             ),
           )
