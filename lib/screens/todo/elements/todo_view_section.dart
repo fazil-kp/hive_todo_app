@@ -25,9 +25,7 @@ class TodoViewSection extends StatelessWidget {
               prefix: Icon(Icons.search, color: blackColor.withOpacity(.5)),
               value: vm.searchFilter,
               onChanged: (val) {
-                vm.searchFilter = val;
-                vm.search();
-                vm.refresh();
+                vm.search(val);
               },
             ),
             20.height,

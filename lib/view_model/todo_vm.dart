@@ -49,13 +49,14 @@ class TodoVm extends ChangeNotifier {
     notifyListeners();
   }
 
-  delete(int id) async {
+  Future<void> delete(int id) async {
     studentModelList = studentModelList.copyWith(data: studentModelList.data.where((element) => element.id != id).toList());
     await HiveDB.toDb("HiveDB", "data", studentModelList.toJson());
     notifyListeners();
   }
 
-  void search() async {
+  Future<void> search(String value) async {
+    searchFilter = value;
     var data = await HiveDB.fromDb("HiveDB", "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
