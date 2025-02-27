@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mine/helpers/hive/hive_db.dart';
+import 'package:mine/config/hive/hive_db.dart';
+import 'package:mine/helper/helper.dart';
 
 import '../model/student_model.dart';
 
@@ -20,9 +21,9 @@ class TodoVm extends ChangeNotifier {
       studentModel = studentModel.copyWith(dob: DateTime.now());
       studentModel = studentModel.copyWith(id: studentModelList.data.length + 1);
       studentModelList = studentModelList.copyWith(data: [...studentModelList.data, studentModel]);
-      await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
+      await HiveDB.toDb("HiveDB", "data", studentModelList.toJson());
       await getStudent();
-      print(studentModelList.toJson());
+      logX(studentModelList.toJson());
     }
     notifyListeners();
   }
@@ -40,12 +41,12 @@ class TodoVm extends ChangeNotifier {
         return e;
       }
     }).toList());
-    await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
+    await HiveDB.toDb("HiveDB", "data", studentModelList.toJson());
     notifyListeners();
   }
 
   Future<void> getStudent() async {
-    var data = await SmartDB.fromDb("SmartDB", "data");
+    var data = await HiveDB.fromDb("HiveDB", "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
     }
@@ -54,12 +55,12 @@ class TodoVm extends ChangeNotifier {
 
   delete(int id) async {
     studentModelList = studentModelList.copyWith(data: studentModelList.data.where((element) => element.id != id).toList());
-    await SmartDB.toDb("SmartDB", "data", studentModelList.toJson());
+    await HiveDB.toDb("HiveDB", "data", studentModelList.toJson());
     notifyListeners();
   }
 
   void search() async {
-    var data = await SmartDB.fromDb("SmartDB", "data");
+    var data = await HiveDB.fromDb("HiveDB", "data");
     if (data != null) {
       studentModelList = StudentModelList.fromJson(data);
       studentModelList = studentModelList.copyWith(
